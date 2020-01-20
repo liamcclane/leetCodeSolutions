@@ -34,9 +34,7 @@ function lengthOfLastWord(s) {
 // console.log(lengthOfLastWord("dsklfja; djf;alsj ;a;sieouraoiw asdf aera"))
 console.log(lengthOfLastWord("dsklfja;djf;"))
 
-/**trying to take care of edge cases...
- * 
- * 
+/**trying to take care of edge cases
  * 
  * function lengthOfLastWord(s) {
  *     
@@ -72,9 +70,5 @@ console.log(lengthOfLastWord("dsklfja;djf;"))
  *     // find the last word, aka the last space and count from the end
  *     return s.length - indOfLastSpace - 1;
  * };
- *  * 
- * 
- * *
- * 
  * 
  */
