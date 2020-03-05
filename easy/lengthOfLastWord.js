@@ -14,6 +14,14 @@
  */
 function lengthOfLastWord(s) {
 
+    if(s===' '){
+        return 0
+    }
+    let count = 0;
+    for(let i = 0; i <s.length ; i++){
+        if(s[i] === " ") count++
+    }
+    if(count === s.length -1) return 0
     // let's count how many words are in the string
     let indOfLastSpace = 0;
     for (let i = 0; i < s.length; i++) {
@@ -21,10 +29,25 @@ function lengthOfLastWord(s) {
             indOfLastSpace = i;
         }
     }
+    
+    if(indOfLastSpace === s.length -1){
+        // s.splice(indOfLastSpace,1)
+        // return lengthOfLastString(s);
+        let n = s.length;
+        s.length = s.length -1;
+        lengthOfLastWord(s);
+    }
 
     // if the string is one word
     if (indOfLastSpace == 0) {
+        if(s[0]===' '){
+            return s.length - 1;
+        }
         return s.length;
+    }
+    
+    if(indOfLastSpace == s.length - 1){
+        
     }
 
     // find the last word, aka the last space and count from the end
@@ -32,7 +55,7 @@ function lengthOfLastWord(s) {
 }
 
 // console.log(lengthOfLastWord("dsklfja; djf;alsj ;a;sieouraoiw asdf aera"))
-console.log(lengthOfLastWord("dsklfja;djf;"))
+console.log(lengthOfLastWord("  "))
 
 /**trying to take care of edge cases
  * 
