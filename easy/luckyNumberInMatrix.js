@@ -46,50 +46,66 @@
  * @param {number[][]} matrix
  * @return {number[]}
  */
-var luckyNumbers  = function(matrix) {
-    let dict = {};
-    let m = matrix.length, n = matrix[0].length;
-    // let arr = [];
-    // dict['val'] = matrix[0][0];
-    // dict['position'] = [0,0];
-    // console.log(dict);
-    for(let i = 0; i < m; i++) {
-        dict[`row${i}`] = {};
-        dict[`row${i}`][`${Math.min(...matrix[i])}`] = [0,0];
-        // console.log(Math.min(...matrix[i]));
-        for(let j = 0; j < n; j++) {
+function luckyNum(matrix) {
 
-            if(matrix[i][j]===Math.min(...matrix[i])){
-                dict[`row${i}`][`${Math.min(...matrix[i])}`] = [i,j];
-                // console.log(`i : ${i} \t j: ${j}`);
+    let [m, n] = [matrix.length, matrix[0].length];
+
+    // this variable is going to hold nested array where the first element 
+    // is the min value of each matrix's rows minimum value
+    // then the next two elements are the index of that min value
+    let arrMin = [];
+
+    // this for loop fill the arrMin variable
+    for (let i = 0; i < m; i++) {
+        let min = Math.min(...matrix[i]);
+        arrMin.push([min, i, matrix[i].indexOf(min)]);
+    }
+
+    // this for loop steps though the matrix vertically
+    // it creates an array and fills with all the coulmn of the martix then find that max
+    // 
+    for (let i = 0; i < n; i++) {
+        let arr = [];
+        for (let j = 0; j < m; j++) {
+            arr.push(matrix[j][i]);
+        }
+        max = Math.max(...arr);
+        for (let j = 0; j < arrMin.length; j++) {
+            if (arrMin[j][2] === i) {
+                if (arrMin[j][0] === max) {
+                    return [max];
+                };
             }
-
-
-            // if(matrix[i][j] < dict['val']) {
-            //     dict['val'] = matrix[i][j];
-            //     dict['position'] = [i,j]; 
-            // }
-            // console.log(`i : ${i} \t j: ${j}`);
-            // console.log();
         }
     }
+    return [];
+}
+let ex1 = [
+    [3, 7, 8],
+    [9, 11, 13],
+    [15, 16, 17]
+]; // 15
+let ex2 = [
+    [1, 10, 4, 2],
+    [9, 3, 8, 7],
+    [15, 16, 17, 12]
+]; // 12
+let ex3 = [
+    [7, 8],
+    [1, 2]
+]; // 7
 
-    console.log(dict);
-    for(let i = 0; i < n; i++) {
-        for(let j = 0; j < m;j++) {
-            // if(matrix[j][i] > Object.keys(dict[`row${i}`])[0].toString()){
-            //     dict[`row${i}`] = "empty";
-            // }
-        }
-    }
-    console.log(Object.keys(dict[`row0`])[0]);
 
-    console.log(dict);
-    // return dict
-};
+console.log(luckyNum(ex1));
+console.log(luckyNum(ex2));
+console.log(luckyNum(ex3));
 
-let ex1 = [[3,7,8],[9,11,13],[15,16,17]]; // 15
-let ex2 = [[1,10,4,2],[9,3,8,7],[15,16,17,12]]; // 12
-let ex3 = [[7,8],[1,2]]; // 7
 
-console.log(luckyNumbers(ex2));
+
+
+
+
+
+
+
+
