@@ -1,3 +1,7 @@
+/**
+ * So TreeNode is what leet code calls the nodes
+ * 
+ */
 class TreeNode {
     constructor(val) {
         this.val = val;
@@ -201,6 +205,112 @@ class BTS {
 
     // DELETE
     /**
+     * @param {TreeNode} node
+     * @param {number} val
+     * @returns {} 
+     */
+    deleteByValDarrick = (node = this.root, val) => {
+        // case with two children
+        // case with one children
+            // one child to the left
+            // one child to the right
+        // case with no children 
+
+        // edge case of empty BTS
+        if (node === null) {
+            return null
+        }
+
+        let current = node;
+        // if we have found the node we are trying to remove
+        if (current.val === val) {
+            // two children, 
+                // traverse down the left branch of the desired node and 
+                // replace the value with the bottom most val of left branch
+                /**
+                 * basically, go left once,
+                 * then find the next smallest value..
+                 */
+            if (current.left && current.right) { // i think i need this.. good => I know... lolol
+                // I think we need another pointer to run down and find the node we are swapping with
+                // right? We move left once. Then move as far right down as we can
+                // so, i think you can do it with left most value as well. and bc, when we set current variable, node already === the val..we only need one pointer to traverse
+                current = current.right;
+                while (current.left) {
+                    current = current.left
+                }
+                node.val = current.val;
+                node.right = this.deleteByValDarrick(node, current.val);
+                return node
+                    // now we need to delete the bottom most value that we used to swap 
+                    // OH okay okay. 
+
+            } else if(current.left) { // one child to the left - after value was found
+                node = current.left
+            } else if(current.right) { // one child to the right - after value was found
+                node = current.right
+            } else { //  no children - after value was found
+                return null
+                // what to do?
+                // we need to reassign the node before the found value to point to null,
+                // right?
+                // yessss nice..
+                // so how do we do that again..... lol right? shit
+                // it feels stupid to carr around the prev the whole time just incase we hit a leaf node
+                // unless that it is just what we have to do
+                //  i don't think i ever used the prev variable... but now i don't remember how to do it hah
+                // want to come back to it then and keep moving
+                // okay good call
+                // okay im gonna cheat and look at my notes
+                // lol wait, maybe we can look at your folders at the same time. can you open another window of 
+                // VS and try to host your own live share session?
+                // idk if it will let you but maybe...
+                /**
+                 * Dude send it to me via slack
+                 * I think it will be easier to click
+                 * thanks
+                 * 
+                 * Error message
+                 * 
+                 * Session is not active. Please contact the session host for a new link.
+                 * 
+                 */
+
+            }
+
+        } else if (current.val < val) { // NOT FOUND - keep recusing
+            // move down the tree to the ... right. Right? lol
+            // i think you're right... lets keep going and see 
+            // do a recursive call
+            node.right = this.deleteByValDarrick(current.right, val);
+            return node
+
+
+            // what does line 267 do???!!
+            // I guess we are returning the "popped" node then? I am confused
+            // i think you are right... its a little fuzzy to me right now
+            // I mean feel free to look at your old notes, bc I don't really remember either
+            // this seems right... bc we are gonna keep traversing recursively until we reach our base case which is when node.val === val? 
+            // or the case where the val does not exist...
+            // should we make the recursive call only run if the node exits?
+            
+        } else { // current.val > val // NOT FOUND - keep recusing
+            node.left = this.deleteByValDarrick(current.left, val);
+            return node
+        }
+
+
+        // I have visual of the BTS I made an example of, I will send it to you via slack        cool
+    }
+
+    // honestly the delete below is hella messy
+
+    // it looks like mine just with more console logs. maybe that's why its messy?
+    // did you do it recurslvey? 
+    // i did but i needed some help with the solution... so i looked it up once or twice hehe
+    // okay I will watch master
+    /**
+     * 
      * 
      * @param { number } val
      * @param { TreeNode } curr
@@ -235,25 +345,25 @@ class BTS {
                 // console.log();
 
                 // edge case where we are deleting the root
-                if(prev === null) {
+                if (prev === null) {
                     console.log("deleting the root");
                     // find the new root
-                    if(this.root.right != null && this.root.left != null) {
-                        
+                    if (this.root.right != null && this.root.left != null) {
+
                     }
                     return this;
                 }
                 prev = curr;
                 let replace = curr.right;
 
-                while(replace.left != null) {
+                while (replace.left != null) {
                     prev = replace;
                     replace = replace.left;
                 }
                 // console.log(replace.val);
 
                 curr.val = replace.val;
-                if(prev === curr) {
+                if (prev === curr) {
                     curr.right = null;
                 } else {
                     prev.left = null;
@@ -267,14 +377,14 @@ class BTS {
                 // console.log();
 
                 // ask your self does prev. right or left need to be over written
-                if(curr.val < prev.val) {
+                if (curr.val < prev.val) {
                     prev.left = curr.right;
                 } else {
-                    prev.righ = curr.right;
+                    prev.right = curr.right;
                 }
-                curr.righ = null;
+                curr.right = null;
                 return this;
-            } else if(curr.left != null) {
+            } else if (curr.left != null) {
                 console.log("only left child");
                 // console.log(curr.val);
                 // console.log();
@@ -282,7 +392,7 @@ class BTS {
                 // console.log();
 
                 // ask your self does prev. right or left need to be over written
-                if(curr.val > prev.val) {
+                if (curr.val > prev.val) {
                     prev.right = curr.left;
                 } else {
                     prev.left = curr.left;
@@ -297,12 +407,12 @@ class BTS {
                 // console.log();
 
                 // edge case of only one node in the BTS and removing it
-                if(prev === null) {
+                if (prev === null) {
                     this.root = null;
                     return this;
                 }
 
-                if(curr.val < prev.val) {
+                if (curr.val < prev.val) {
                     prev.left = null;
                 } else {
                     prev.right = null;
@@ -371,3 +481,51 @@ for (let n of vals) {
 
 
 console.log(myBTS.deleteByVal(101).deleteByVal(200).deleteByVal(100).inorder());
+
+
+/**
+ *  VIA DARRICK
+    BST.prototype.delete = function (val) {
+        var remove = function (node, val) {
+            if (node === null) {
+                return null
+            }
+            if (node.val === val) {
+                // no children
+                if (!node.left && !node.right) {
+                    return null
+                }
+                // did you test this at all? i did... but not for many cases
+                // one child
+                else if (!node.left) {
+                    return node.right
+                }
+                else if (!node.right) {
+                    return node.left
+                }
+                // two children
+                // looks like i fucked up already... ahah. forgot to go to the right node
+                let pointer = node;
+                pointer = pointer.right;
+                // traverse left on the right tree branch
+                while (pointer.left) {
+                    pointer = pointer.left
+                }
+                // set node = left most leaflet from right branch
+                node.val = pointer.val;
+                // now remove the left most leaflet from the right branch
+                node.right = remove(node.right, pointer.val)
+                return node
+            } else if (val < node.val) {
+                node.left = remove(node.left, val);
+                return node
+            } else if (val > node.val) {
+                node.right = remove(node.right, val);
+                return node
+            }
+        }
+        return remove(this.root, val);
+    }
+
+
+ */
