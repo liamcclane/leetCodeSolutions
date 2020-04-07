@@ -1,14 +1,14 @@
-// class ListNode {
-//     /**
-//      * A Node with two characteristics Val and Next
-//      * @param { number } val values integer for the node
-//      */
-//     constructor(val) {
-//         this.val = val;
-//         this.next = null;
-//     }
-// }
-import ListNode from 'ListNode.js';
+class ListNode {
+    /**
+     * A Node with two characteristics Val and Next
+     * @param { number } val values integer for the node
+     */
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+// import ListNode from 'ListNode.js';
 class SLL {
     constructor() {
         this.head = null;
@@ -18,7 +18,7 @@ class SLL {
      * Create - add to the list
      * Read - print all val in the list
      * Update - list manipulation
-     * Delete -
+     * Delete - all the remove functions
      */
 
     // ****************CREATE**************
@@ -50,7 +50,7 @@ class SLL {
 
     /**
      * 
-     * @param { number }
+     * @param { number } val
      * @returns { SLL }
      */
     addToFront = (val) => {
@@ -81,7 +81,7 @@ class SLL {
             return this;
         }
 
-        // if k = 1 call another funciton
+        // if k = 1 call another function
         if (k === 1) return this.addToFront(val);
 
         // if k is longer than the list
@@ -117,7 +117,7 @@ class SLL {
             return this;
         }
 
-        // if k = 1 call another funciton
+        // if k = 1 call another function
         if (k === 1) return this.add(val);
 
         // if k = length
@@ -148,6 +148,19 @@ class SLL {
 
         return this;
     }
+    /**
+     * @param { number } val
+     * @returns { SLL } if it can, will return SLL to be chained
+     * @returns { ListNode } will return a Node if it already exists
+     */
+    addIfUnique = (val) => {
+        if (this.howManyOccurrence(val) === 0) {
+            this.add(val);
+            return this
+        }
+        console.log("value already exists");
+        return this.find()
+    }
 
     // **********READ******************
     // **********READ******************
@@ -177,7 +190,7 @@ class SLL {
      * 
      * @returns { number[] }
      */
-    printSLLArray = () => {
+    sLLArray = () => {
 
         // edge case of empty list
         if (this.isEmpty()) return [];
@@ -200,7 +213,7 @@ class SLL {
      * 
      * @returns { SLL }
      */
-    reverse = () => {
+    reverseList = () => {
 
         // edge case of empty list OR only one node in list
         if (this.isEmpty() || this.head.next === null) return this;
@@ -223,7 +236,7 @@ class SLL {
     // ******************DELETE******************
     /**
      * simulates the .pop() from arrays
-     * @returns { ListNode } the poped node
+     * @returns { ListNode } the popped node
      */
     pop() {
 
@@ -257,7 +270,7 @@ class SLL {
     /**
      * 
      * @param { number } val
-     * @returns { ListNode } the poped node
+     * @returns { ListNode } the popped node
      */
     removeKthFromLast = (k) => {
 
@@ -290,36 +303,38 @@ class SLL {
     /**
      * 
      * @param { number } k 
+     * @returns { ListNode }
      */
     removeKthNode = (k) => {
+        
+        // edge case of empty list
+        if (this.isEmpty()) return this;
+        
+        // if we want to remove the first Node
+        if (k === 1) {
+            return this.removeFromFront();
+        }
+        
+        // if we want to remove the last element in the list
+        if(k === this.length()) {
+            return this.pop();
+        }
 
+        // if we are trying to remove something outside the length of the list
+        if(k>this.length()){
+            console.log(`only ${this.length()} nodes in the list`);
+        }
+
+        let pre = this.head;
+        let runner = this.head.next;
+        while (k > 2) {
+            pre = runner;
+            runner = runner.next;
+            k --;
+        }
+        pre.next = runner.next;
+        return runner;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // ******************EXTRA*****************
     // ******************EXTRA*****************
@@ -351,8 +366,102 @@ class SLL {
      * @returns { number }
      */
     altLength = () => {
-        return this.printSLLArray().length;
+        return this.sLLArray().length;
     }
+    /**
+     * check if value is present in sll
+     * @returns {boolean}
+     */
+    isPresent(val) {
+        // edge case of empty list
+        // outputs error
+        if (this.isEmpty()) {
+            console.log("Empty sll");
+            return this
+        }
+        let runner = this.head;
+        while (runner != null) {
+            if (runner.val === val) {
+                return true;
+            }
+            runner = runner.next;
+        }
+        return false
+    }
+    /**
+     * 
+     */
+    altIsPresent = () => {
+        if (this.howManyOccurrence() === 0) return false;
+        return false;
+    }
+    /**
+     * this will only find the first occurrence 
+     * @returns {ListNode}
+     */
+    find(val) {
+        if (this.isEmpty()) {
+            // error message
+            console.log("no Node in the SLL");
+            return this
+        }
+        let runner = this.head;
+        while (runner != null) {
+            if (runner.val === val) {
+                return runner;
+            }
+            runner = runner.next;
+        }
+        return false;
+    }
+    /**
+     * @returns {number}
+     */
+    howManyOccurrence = (val) => {
+        if (this.isEmpty()) {
+            console.log("empty list");
+            return this;
+        }
+        let count = 0;
+        let runner = this.head;
+        while (runner != null) {
+            if (runner.val === val) count++;
+            runner = runner.next;
+        }
+        return count;
+    }
+    /**
+     * 
+     * @returns {boolean}
+     */
+    hasMultipleOccurrence = (val) => {
+        if (this.howManyOccurrence(val) > 0) return true;
+        return false;
+    }
+    /**
+     * 
+     * @returns {ListNode[]}
+     */
+    multipleOccurrence = (val) => {
+        if (this.howManyOccurrence(val) === 0) {
+            console.log(`${val} does not exists in sll`);
+            return [];
+        }
+        let arr = [];
+        let runner = this.head;
+        while (runner != null) {
+            if (runner.val === val) {
+                arr.push(runner);
+            }
+            runner = runner.next;
+        }
+        return arr;
+    }
+    // ******************Dealing with two list*****************
+    // ******************Dealing with two list*****************
+    // ******************Dealing with two list*****************
+    // ******************Dealing with two list*****************
+    
 }
 
 let mySLL = new SLL();
@@ -361,11 +470,11 @@ let single = new SLL();
 // single.add(8080);
 // single.printAll().pop();
 // single.printAll();
-const a = [101, 102, 103, 104, 55, 66, 77];
+const a = [101, 102, 103, 104, 55, 66, 77, 777, 77, 55, 66, 77];
 for (let val of a) {
     mySLL.add(val);
 }
-console.log(mySLL.printSLLArray());
-mySLL.removeKthFromLast(10);
-console.log(mySLL.printSLLArray());
+console.log(mySLL.sLLArray());
+console.log(mySLL.removeKthNode(3));
+console.log(mySLL.sLLArray());
 
