@@ -1,13 +1,14 @@
-class ListNode {
-    /**
-     * A Node with two characteritics Val and Next
-     * @param { number } val values interger for the node
-     */
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-    }
-}
+// class ListNode {
+//     /**
+//      * A Node with two characteristics Val and Next
+//      * @param { number } val values integer for the node
+//      */
+//     constructor(val) {
+//         this.val = val;
+//         this.next = null;
+//     }
+// }
+import ListNode from 'ListNode.js';
 class SLL {
     constructor() {
         this.head = null;
