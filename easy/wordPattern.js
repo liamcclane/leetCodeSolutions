@@ -66,7 +66,7 @@ var wordPattern = function (pattern, str) {
             // console.log(word);
             return false
         } else if (!(letter in dict)) {
-            dict[letter] = [word];
+            dict[letter] = word;
 
             // this inner else if statement checks for the 4th example 
             // that should fail if the word was already assigned to an 
