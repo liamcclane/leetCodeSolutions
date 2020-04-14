@@ -54,3 +54,9 @@ var addTwoNumbers = function(l1, l2) {
     }
     return ansList;
 };
+// import {ListNode} from './../dataStructures/ListNode.js';
+// let list1 = new ListNode(2);
+// list1.add(3).add(4);
+// let list2 = new ListNode(1);
+// list2.add(1).add(1);
+// console.log(addTwoNumbers(list1,list2));

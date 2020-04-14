@@ -8,7 +8,6 @@ class ListNode {
         this.next = null;
     }
 }
-// import ListNode from 'ListNode.js';
 class SLL {
     constructor() {
         this.head = null;
@@ -464,17 +463,17 @@ class SLL {
     
 }
 
-let mySLL = new SLL();
-let emptySLL = new SLL();
-let single = new SLL();
-// single.add(8080);
-// single.printAll().pop();
-// single.printAll();
-const a = [101, 102, 103, 104, 55, 66, 77, 777, 77, 55, 66, 77];
-for (let val of a) {
-    mySLL.add(val);
-}
-console.log(mySLL.sLLArray());
-console.log(mySLL.removeKthNode(3));
-console.log(mySLL.sLLArray());
+// let mySLL = new SLL();
+// let emptySLL = new SLL();
+// let single = new SLL();
+// // single.add(8080);
+// // single.printAll().pop();
+// // single.printAll();
+// const a = [101, 102, 103, 104, 55, 66, 77, 777, 77, 55, 66, 77];
+// for (let val of a) {
+//     mySLL.add(val);
+// }
+// console.log(mySLL.sLLArray());
+// console.log(mySLL.removeKthNode(3));
+// console.log(mySLL.sLLArray());
 
