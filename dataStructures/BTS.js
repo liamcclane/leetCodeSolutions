@@ -2,13 +2,7 @@
  * So TreeNode is what leet code calls the nodes
  * 
  */
-class TreeNode {
-    constructor(val) {
-        this.val = val;
-        this.right = null;
-        this.left = null;
-    }
-}
+var TreeNode = require('./TreeNode');
 class BTS {
     constructor() {
         this.root = null; // this should be a TreeNode that chains all the way down
@@ -348,8 +342,16 @@ class BTS {
                 if (prev === null) {
                     console.log("deleting the root");
                     // find the new root
+                    // let runner = this.root;
                     if (this.root.right != null && this.root.left != null) {
+                        // let temp = this.root;
+                        // this.root
+                    } else if (this.root.right != null) {
 
+                    } else if (this.root.left != null) {
+
+                    } else {
+                        console.log("only had a root");
                     }
                     return this;
                 }
@@ -465,7 +467,7 @@ for (let n of vals) {
 //     110, 101, 300, 220, 225
 // ]
 
-// console.log(myBTS.inorder());
+console.log(myBTS.inorder());
 // [
 //     20,  22,  30,  40,  45,  50,
 //     51,  55,  57,  59, 100, 101,

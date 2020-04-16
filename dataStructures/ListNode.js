@@ -1,8 +1,7 @@
 /***
  * trying to import and export file and modularize my code
  */
-
-export default class ListNode {
+class ListNode {
     /**
      * A Node with two characteristics Val and Next
      * @param { number } val values integer for the node
@@ -28,3 +27,4 @@ export default class ListNode {
         }
     }
 }
+module.exports = ListNode;
