@@ -21,31 +21,35 @@
  * 7.     13112221
  * 8.     1113213211
  * 9.     31131211131221
- * 10.     13211311123113112211
+ * 10.    13211311123113112211
  * @param {number} n
  * @return {string}
  */
-var countAndSay = function(n) {
-    return countNsay(n);
+var countAndSay = function (n) {
+  return countNsay(n);
 };
 
-function countNsay(count, str){
-  if(!str) { str = "1"; }
-  if(count === 0) { return "0"; }
-  if(count === 1) { return str; }
-  
+function countNsay(count, str) {
+  if (!str) { str = "1"; }
+  if (count === 0) { return "0"; }
+  if (count === 1) { return str; }
+
   let char = str[0];
   let charCount = 1;
   let newStr = "";
-  for(let i = 1; i < str.length; i++){
-    if(char === str[i]){
+  for (let i = 1; i < str.length; i++) {
+    if (char === str[i]) {
       charCount++;
-    }else{
+    } else {
       newStr += charCount + "" + char;
       char = str[i];
       charCount = 1;
     }
   }
   newStr += charCount + "" + char;
-  return countNsay(count-1, newStr);
+  return countNsay(count - 1, newStr);
+}
+for(let val of [1,2,3,4,5,6,7]){
+  console.log(`${val}.\t${countAndSay(val)}`);
+  console.log();
 }

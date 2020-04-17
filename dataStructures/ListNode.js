@@ -20,11 +20,14 @@ class ListNode {
         return this;
     }
     print = () => {
+        let arr = [];
         let curr = this;
         while (curr.next != null) {
-            console.log(curr.val);
+            arr.push(curr.val);
+            // console.log(curr.val);
             curr = curr.next;
         }
+        console.log(arr);
     }
 }
 module.exports = ListNode;

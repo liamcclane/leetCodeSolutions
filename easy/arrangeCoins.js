@@ -32,7 +32,6 @@
  * @return {number}
  */
 var arrangeCoins = function (n) {
-    if(n<=0) return 0;
     let num = 0;
     let step = 0;
     while(num<=n){
@@ -59,7 +58,7 @@ var arrangeCoinsR = function (n) {
 
 };
 for(let i = 1; i<21; i++){
-    console.log(`for ${i} number of coins ${arrangeCoinsR(i)} steps can be made`);
+    console.log(`for ${i} number of coins ${arrangeCoins(i)} steps can be made`);
     console.log();
 }
 
