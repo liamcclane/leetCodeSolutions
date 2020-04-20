@@ -22,9 +22,8 @@ class ListNode {
     print = () => {
         let arr = [];
         let curr = this;
-        while (curr.next != null) {
+        while (curr != null) {
             arr.push(curr.val);
-            // console.log(curr.val);
             curr = curr.next;
         }
         console.log(arr);

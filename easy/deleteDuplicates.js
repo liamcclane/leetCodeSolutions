@@ -22,17 +22,23 @@ var ListNode = require('./../dataStructures/ListNode');
  * @return {ListNode}
  */
 var deleteDuplicates = function (head) {
-    if (head.next === null || head === null) {
+    if (head=== null || head.next === null) {
         return head;
     }
-    // let curr = head, front = curr;
-    // front = curr.next;
-    // while (front.next != null) {
-    //     if (front.val === curr.val) {
-    //         front = front.next;
-    //     }
-    //     curr = curr.next;
-    // }
+    let curr = head
+    let front = curr.next;
+    front = curr.next;
+    while (front != null) {
+        if (front.val === curr.val) {
+            front = front.next;
+        } else {
+            curr.next = front;
+            front = front.next;
+            curr = curr.next;
+        }
+    }
+    curr.next = null;
+    return head;
 };
 let ex1 = new ListNode(100);
 for (let val of [101, 101, 101, 102, 103, 103]) {
@@ -40,25 +46,4 @@ for (let val of [101, 101, 101, 102, 103, 103]) {
 }
 ex1.print();
 deleteDuplicates(ex1).print();
-// console.log()
-
-
-// DED code RIP
-// if (head === null) return head;
-// let curr = head;
-// if (curr.next === null) return head;
-// curr = curr.next;
-// prev = head;
-// while (curr != null) {
-
-//     if (prev.val != curr.val) {
-//         prev = curr;
-//         curr = curr.next;
-//     } else {
-//         // while (prev.val === curr.val) {
-//         //     // prev = curr;
-//         //     curr = curr.next;
-//         // }
-//         prev.next = curr;
-//     }
-// }
+console.log(ex1.next.next);
