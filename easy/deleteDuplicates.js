@@ -22,17 +22,20 @@ var ListNode = require('./../dataStructures/ListNode');
  * @return {ListNode}
  */
 var deleteDuplicates = function (head) {
-    let curr = head, front = curr;
-    front = curr.next;
-    while(front != null){
-        if(front.val === curr.val){
-            
-        }
-        curr = curr.next;
+    if (head.next === null || head === null) {
+        return head;
     }
+    // let curr = head, front = curr;
+    // front = curr.next;
+    // while (front.next != null) {
+    //     if (front.val === curr.val) {
+    //         front = front.next;
+    //     }
+    //     curr = curr.next;
+    // }
 };
 let ex1 = new ListNode(100);
-for(let val of [101,101,101,102,103,103]){
+for (let val of [101, 101, 101, 102, 103, 103]) {
     ex1.add(val);
 }
 ex1.print();
