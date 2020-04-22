@@ -1,4 +1,4 @@
-var ListNode = require('./../dataStructures/ListNode');
+var ListNode = require('../dataStructures/ListNode');
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -47,3 +47,8 @@ for (let val of [101, 101, 101, 102, 103, 103]) {
 ex1.print();
 deleteDuplicates(ex1).print();
 console.log(ex1.next.next);
+
+/**
+ * Runtime: 60 ms, faster than 90.46% of JavaScript online submissions for Remove Duplicates from Sorted List.
+ * Memory Usage: 35.6 MB, less than 46.88% of JavaScript online submissions for Remove Duplicates from Sorted List.
+ */
