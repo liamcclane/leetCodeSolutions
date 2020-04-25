@@ -53,9 +53,7 @@ const isPalindrome = function (s) {
  * Runtime: 68 ms, faster than 79.84% of JavaScript online submissions for Valid Palindrome.
  * Memory Usage: 39.5 MB, less than 30.43% of JavaScript online submissions for Valid Palindrome.
  */
-
-
-
+/*********************************************************************/
 /**680- Valid Palindrome II
  * 
  * Given a non-empty string s, you may delete at most one character. 
@@ -72,27 +70,62 @@ const isPalindrome = function (s) {
  * @param {string} s
  * @return {boolean}
  */
-const validPalindrome = function (s) {
-    if (isPalindrome(s)) return true;
-    for (let i = 0; i < s.length; i++) {
-        newWord = s.slice(0, i).concat(s.slice(i + 1, s.length));
-        console.log(newWord);
-        if (isPalindrome(newWord)) return true;
+function validPalindrome(s) {
+    let j = s.length - 1;
+    let paths = [];// once we have tired a path this will look like ["i",[2,22]]
+    for (let i = 0; i <= j; i++, j--) {
+        if (s[i] != s[j]) {
+            // console.log(`s[i] : \t${s[i]}`);
+            // console.log(`s[j] : \t${s[j]}`);
+            // console.log(`i : \t${i}`);
+            // console.log(`j : \t${j}`);
+            // look to either increase i or decrease j
+            if (paths.length === 2) {
+                // revert both pointers
+                i = paths[1][0];
+                j = paths[1][1];
+                // then do the opposite that you did last time at the last spot
+                if (paths.includes('i')) {
+                    j--;
+                    paths.push("j");
+                    paths.push([i, j]);
+                } else {
+                    paths.push("i");
+                    paths.push([i, j]);
+                    i++;
+                }
+                // console.log("******")
+                // console.log(`s[i] : \t${s[i]}`);
+                // console.log(`s[j] : \t${s[j]}`);
+                // console.log(`i : \t${i}`);
+                // console.log(`j : \t${j}`);
+                // already tried once the i way
+            } else if (paths.length === 0) {
+                // never tired moving the pointers, let's move,
+                if (s[i + 1] === s[j]) {
+                    paths.push("i");
+                    paths.push([i, j]);
+                    i++;
+                } else if (s[j - 1] === s[i]) {
+                    paths.push("j");
+                    paths.push([i, j]);
+                    j--;
+                } else if (!(s[i + 1] === s[j] || s[j - 1] === s[i])) return false;
+            } else {
+                return false;
+            }
+        }
+        // console.log();
     }
-    return false;
-};
-// console.log(validPalindrome("racecar"));
-console.log();
-
+    return true;
+}
 /**
  * @param {string} s
  * @return {boolean}
  */
 var validPalindromeTimeConstraint = function (s) {
-    const isPalindromeB = functio
-    
-    const n (str) {
-        let j = str.length- 1;
+    const isPalindromeB = function (str) {
+        let j = str.length - 1;
         for (let i = 0; i < j; i++, j--) {
             if (str[i] != str[j]) {
                 return false;
@@ -108,6 +141,13 @@ var validPalindromeTimeConstraint = function (s) {
     }
     return false;
 };
-// console.log(validPalindromeTimeConstraint("leqyxqopjzqdytivrzkdgmhchkgkpbdnewoubudgvykyqkcyoyeavbjplgodcocazrvhmarkrcozyuywostjdkxwghbaliccfqukgisqzqpukmaissranamsjawivxzbjqazzcaqfzsecgcfkzvvpjuinvhkjteoaqsmaedkifenmcmicgrwmmfubvpnrowszbofeyecwihgsemlwyipuzowyjapklsdbtupttabemanmgqbsatunrbhwleffelwhbrnutasbqgmnamebattputbdslkpajywozupiywlmesghiwceyefobzswornpvbufmmwrgcimcmnefikdeamsqaoetjkhvniujpvvzkfcgceszfqaczaqjbzxviwajsmanarssiamkupqzsigkuqfccilabhgwxkdjtsowyuyzocrkramhvrzacocdoglpjbvaeyoyckqykyvgdubuowendbpkgkhchmgdkzrvitydqzjpoqxyqel"));
+console.log(validP("abc"));
+// console.log();
+// console.log(validP("leqyxqopjzqdytivrzkdgmhchkgkpbdnewoubudgvykyqkcyoyeavbjplgodcocazrvhmarkrcozyuywostjdkxwghbaliccfqukgisqzqpukmaissranamsjawivxzbjqazzcaqfzsecgcfkzvvpjuinvhkjteoaqsmaedkifenmcmicgrwmmfubvpnrowszbofeyecwihgsemlwyipuzowyjapklsdbtupttabemanmgqbsatunrbhwleffelwhbrnutasbqgmnamebattputbdslkpajywozupiywlmesghiwceyefobzswornpvbufmmwrgcimcmnefikdeamsqaoetjkhvniujpvvzkfcgceszfqaczaqjbzxviwajsmanarssiamkupqzsigkuqfccilabhgwxkdjtsowyuyzocrkramhvrzacocdoglpjbvaeyoyckqykyvgdubuowendbpkgkhchmgdkzrvitydqzjpoqxyqel")); // true
+// console.log();
+// console.log(validP("aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga")) // true
 
-
+/**
+ * Runtime: 88 ms, faster than 55.41% of JavaScript online submissions for Valid Palindrome II.
+ * Memory Usage: 42.8 MB, less than 75.00% of JavaScript online submissions for Valid Palindrome II.
+ */
