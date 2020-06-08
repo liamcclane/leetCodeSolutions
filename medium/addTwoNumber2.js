@@ -1,6 +1,6 @@
 // import {ListNode} from './../dataStructures/ListNode.js';
-var ListNode = require('./../dataStructures/ListNode');
-/** Add Two Numbers**
+var ListNode = require('../dataStructures/ListNode');
+/**2. Add Two Numbers**
  * You are given two non-empty linked lists representing two non-negative integers. 
  * The digits are stored in reverse order and each of their nodes contain a single digit. 
  * Add the two numbers and return it as a linked list.
@@ -53,3 +53,11 @@ list1.add(3).add(4);
 let list2 = new ListNode(1);
 list2.add(1).add(1);
 console.log(addTwoNumbers(list1,list2));
+/**Edge case of 
+ * list nodes
+ * [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+ * [5,6,4]
+ * 
+ * returning [6,6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+ * I return [0,3,NaN,NaN,1] b/c num too large
+ */
