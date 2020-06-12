@@ -454,8 +454,8 @@ class BTS {
 
 const myBTS = new BTS;
 myBTS.insert(100);
-const vals = [200, 300, 50, 40, 30, 20, 45, 55, 51, 57, 59, 22, 110, 101, 220, 225];
-for (let n of vals) {
+const arr = [200, 300, 50, 40, 30, 20, 45, 55, 51, 57, 59, 22, 110, 101, 220, 225];
+for (let n of arr) {
     myBTS.insert(n);
 }
 
