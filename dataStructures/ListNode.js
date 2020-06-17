@@ -1,7 +1,7 @@
 /***
  * trying to import and export file and modularize my code
  */
-class ListNode {
+module.exports = class ListNode {
     /**
      * A Node with two characteristics Val and Next
      * @param { number } val values integer for the node
@@ -29,4 +29,3 @@ class ListNode {
         console.log(arr);
     }
 }
-module.exports = ListNode;

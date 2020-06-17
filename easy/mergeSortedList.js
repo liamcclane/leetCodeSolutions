@@ -1,101 +1,84 @@
+const ListNode = require('./../dataStructures/ListNode');
 /*****Merge Two Sorted List********
  * 
- * Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+ * Merge two sorted linked lists and return it as a new list. 
+ * The new list should be made by splicing together the nodes of the first two lists.
  * 
  * Example:
  * 
  * Input: 1->2->4, 1->3->4
  * Output: 1->1->2->3->4->4
- * 
- * 
- * 
- * 
+ * @param {ListNode} l1 
+ * @param {ListNode} l2
+ * @returns {ListNode}
  */
-
-// Try edit message
 function mergeTwoLists(l1, l2) {
-    let runner1 = l1.head, runner2 = l2.head;
+    if (!l1 && !l2) {
+        return null
+    } else if (!l1&& l2 ) {
+        return l2;
+    } else if (l1 && !l2) {
+        return l1;
+    }
+    var add = (list, val) => {
+        let runner = list;
+        while (runner.next) {
+            runner = runner.next;
+        }
+        runner.next = new ListNode(val);
+    }
+    let ans = new ListNode(Math.min(l1.val, l2.val));
 
-    while (runner2 != null || runner1 != null) {
-        if (runner1.val == runner2.val) {
-            console.log("inside if")
-            temp = runner1.next
-            runner1.next = runner2
-            runner1 = temp
-        } else if (runner1.val < runner2.val) {
-            console.log("inside else")
-            temp = runner2.next;
-            runner2.next = runner1;
-            runner2 = temp
+    let r1 = (l1.val <= l2.val) ? l1.next : l1,
+        r2 = (l2.val < l1.val) ? l2.next : l2;
+    while (r1 && r2) {
+        // console.log(r1.val);
+        // console.log(r2.val);
+        if (r1.val < r2.val) {
+            add(ans, r1.val);
+            r1 = r1.next;
+        } else if (r2.val < r1.val) {
+            add(ans, r2.val);
+            r2 = r2.next;
         } else {
-            console.log("inside else")
-
-            temp = runner1.next
-            runner1.next = runner2
-            runner1 = temp
+            add(ans, r1.val);
+            add(ans, r2.val);
+            r1 = r1.next;
+            r2 = r2.next;
         }
-        // console.log("runner1 val:", runner1.val)
-        // console.log("runner2 val:", runner2.val)
-        console.log("l1 looks like")
-        l1.print();
-        console.log("l2 looks like")
-        l2.print();
+        // ans.print();
+        // console.log()
     }
-    console.log("we are returning ")
-    return l1
+    // now check if we finished one but not the other
+    // not matching in lengths
+    if (r1) {
+        while (r1) {
+            add(ans, r1.val);
+            r1 = r1.next;
+        }
+    }
+    if (r2) {
+        while (r2) {
+            add(ans, r2.val);
+            r2 = r2.next;
+        }
+    } 
+    // alternatively, we could 'run' down the ans list
+    // then just add the leftover node list
+    return ans;
 };
-class SLL {
-    constructor() {
-        this.head = null;
-    }
-    add(n) {
-        if (this.head == null) {
-            this.head = n
-            return this
-        }
-        let r = this.head
-        while (r.next != null) {
-            r = r.next
-        }
-        r.next = n
-        return this
-    }
-    print() {
-        if (this.head == null) {
-            console.log("no nodes found")
-            return null
-        }
-        let r = this.head;
-        while (r != null) {
-            console.log(r.val)
-            r = r.next
-        }
-    }
+
+let list1 = new ListNode(1);
+for (let v of [2, 4]) {
+    list1.add(v);
 }
-class Node {
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-    }
+list1.print();
+let list2 = new ListNode(1);
+for (let v of [3, 4, 55, 77, 888]) {
+    list2.add(v);
 }
-var l1 = new SLL();
-var l2 = new SLL();
+list2.print();
 
-var n1 = new Node(1);
-var n2 = new Node(2);
-var n3 = new Node(4);
-
-var m1 = new Node(1);
-var m2 = new Node(3);
-var m3 = new Node(4);
-
-l1.add(n1).add(n2).add(n3);
-// l1.print()
-l2.add(m1).add(m2).add(m3);
-// l2.print();
-
-console.log("running function")
-mergeTwoLists(l1, l2).print();
-console.log("Want, 1,1,2,3,4,4")
-
+mergeTwoLists(list1, list2).print();
+// mergeTwoLists(null, null); // return null
 
