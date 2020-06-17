@@ -1,3 +1,4 @@
+var ListNode = require('./../dataStructures/ListNode');
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -5,9 +6,6 @@
  *     this.next = null;
  * }
 */
-// import {ListNode} from "./../dataStructures/ListNode"; 
-import { ListNode } from "./../dataStructures/SingelyLinkedLists"
-// structure
 /** Palindrome Linked List **
  * 
  * Given a singly linked list, determine if it is a palindrome.
@@ -25,22 +23,46 @@ import { ListNode } from "./../dataStructures/SingelyLinkedLists"
  * @return {boolean}
  */
 var isPalindrome = function (head) {
-    let len = 0;
-    let runner = head;
-    while(runner != null) {
-        len ++;
+    if (head === null || head.next === null) { return true };
+    let len = 0, runner = head;
+    // getting length of list
+    while (runner) {
+        len++;
         runner = runner.next;
     }
+    // repositioning runner to the top
     runner = head;
-    len = Math.floor(len/2);
-    let arr = [];
-    while(len>0){
-        arr.push(runner.val);
+    let half = Math.floor(len / 2), arr = [];
+    while (runner) {
+        // if we are on the first half of the palindrome
+        // add it to the array
+        if (half > 0) {
+            arr.push(runner.val);
+        } else if (half < 0) {
+            //  if we are in the second half of the palindrome 
+            // compare it to the values in the arr while popping
+            if (arr.pop() != runner.val) {
+                return false;
+            }
+        }
+        // Always move the runner and decrease the half
+        half--;
         runner = runner.next;
-        len--;
+        // this if statement takes care of odd and even list
+        // if we are at the inflection point 
+        // additionally decrease because we are only in the second half IF the 
+        // variable half is negative, then if it is an add length list
+        //  we need to additionally move the runner over that extra inflection point
+        if (half === 0) {
+            half--;
+            if (len % 2 == 1) { runner = runner.next }
+        }
     }
-    // now runner is at the half way point
-
+    return true;
 };
-let ex1 = new SLL()
-ex1.add(2).printAll();
+let list1 = new ListNode(1);
+for (let v of [2,2,1]) {
+    list1.add(v);
+}
+list1.print();
+console.log(isPalindrome(list1));
