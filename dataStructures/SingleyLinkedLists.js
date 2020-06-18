@@ -203,6 +203,13 @@ class SLL {
         }
         return arr;
     }
+    /**
+     * @returns { SLL }
+     */
+    print = () => {
+        console.log(this.sLLArray());
+        return this;
+    }
 
     // ************UPDATE*****************
     // ************UPDATE*****************
@@ -306,22 +313,22 @@ class SLL {
      * @returns { ListNode }
      */
     removeKthNode = (k) => {
-        
+
         // edge case of empty list
         if (this.isEmpty()) return this;
-        
+
         // if we want to remove the first Node
         if (k === 1) {
             return this.removeFromFront();
         }
-        
+
         // if we want to remove the last element in the list
-        if(k === this.length()) {
+        if (k === this.length()) {
             return this.pop();
         }
 
         // if we are trying to remove something outside the length of the list
-        if(k>this.length()){
+        if (k > this.length()) {
             console.log(`only ${this.length()} nodes in the list`);
         }
 
@@ -330,12 +337,33 @@ class SLL {
         while (k > 2) {
             pre = runner;
             runner = runner.next;
-            k --;
+            k--;
         }
         pre.next = runner.next;
         return runner;
     }
+    removeByVal = val => {
+        let runner = this.head;
+        let prev = null;
 
+        if (runner !== null && runner.val == val) {
+            this.head = runner.next;
+            return this;
+        }
+
+        while (runner && runner.val !== val) {
+            prev = runner;
+            runner = runner.next;
+        }
+
+        if (runner === null) {
+            console.log(`error msg ${val} does not exist`);
+            return this;
+        }
+        //runner is now our node to be deleted
+        prev.next = runner.next;
+        return this;
+    }
     // ******************EXTRA*****************
     // ******************EXTRA*****************
     // ******************EXTRA*****************
@@ -461,20 +489,18 @@ class SLL {
     // ******************Dealing with two list*****************
     // ******************Dealing with two list*****************
     // ******************Dealing with two list*****************
-    
+
 }
 
-// let mySLL = new SLL();
-// let emptySLL = new SLL();
-// let single = new SLL();
-// // single.add(8080);
-// // single.printAll().pop();
-// // single.printAll();
-// const a = [101, 102, 103, 104, 55, 66, 77, 777, 77, 55, 66, 77];
-// for (let val of a) {
-//     mySLL.add(val);
-// }
-// console.log(mySLL.sLLArray());
+let mySLL = new SLL();
+let emptySLL = new SLL();
+let single = new SLL();
+// single.add(8080).printAll().removeByVal(8080).printAll();
+const a = [101, 102, 103, 104, 55, 66, 55, 66, 77];
+for (let val of a) {
+    mySLL.add(val);
+}
+// mySLL.removeByVal(10000).print();
+// emptySLL.removeByVal(4);
 // console.log(mySLL.removeKthNode(3));
-// console.log(mySLL.sLLArray());
 
