@@ -23,6 +23,18 @@
  * @returns {number} your profit from the given stock market array
  */
 const stockProfit = arr => {
+
+    /**
+     * 
+     * @param {number[]} x 
+     * @returns {boolean} whether the arr x is strictly decreasing or not
+     */
+    const isStrictlyDecreasing = x => {
+        for(let i = 0; i < x.length; i++) {
+            
+        }
+    }
+
     let sellPrice = 0, buyPrice = 0, profit = 0;
 
     for (let i = 0; i < arr.length - 1; i++) {

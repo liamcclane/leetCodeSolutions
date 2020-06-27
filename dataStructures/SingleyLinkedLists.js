@@ -398,7 +398,7 @@ class SLL {
     }
     /**
      * check if value is present in sll
-     * @returns {boolean}
+     * @returns {boolean} true or false
      */
     isPresent(val) {
         // edge case of empty list

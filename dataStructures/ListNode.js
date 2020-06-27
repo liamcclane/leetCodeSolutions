@@ -10,6 +10,11 @@ module.exports = class ListNode {
         this.val = val;
         this.next = null;
     }
+    /**
+     * 
+     * @param {number} val 
+     * @returns {ListNode}
+     */
     add = (val) => {
         let curr = this;
         while (curr.next != null) {
@@ -19,6 +24,9 @@ module.exports = class ListNode {
         curr.next = newNode;
         return this;
     }
+    /**
+     * @returns void
+     */
     print = () => {
         let arr = [];
         let curr = this;
