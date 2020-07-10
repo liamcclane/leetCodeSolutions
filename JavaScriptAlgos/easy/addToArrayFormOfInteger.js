@@ -37,6 +37,21 @@
  */
 var addToArrayFormBest = (A, K) => {
     let KnumArr = Array.from(K.toString()).map(x => Number(x));
+    /**
+     * I saw that 
+     * let KnumArr = Array.from(K.toString());
+     * makes KnumArr into  ['3','4']
+     * so I used the .map() function to changed each of the elements into a number
+     * let KnumArr = Array.from(K.toString());
+     * the line above was given to me from you! lol I had to look more stuff up about it 
+     * Awesome!! I kept getting 30 when I added the string and integer together. It took 
+     * forever to realize I was making a string lol Cool that you were able to do that in one line
+     * ya! lol actually before we talk about this one let's go to an older one, thumbs up
+     * 
+     * line 147
+     */
+
+
     let ans = [];
     // console.log(KnumArr);
     // console.log(A);
@@ -133,10 +148,23 @@ var addToArrayFormBadBalanced = (A, K) => {
  */
 var addToArrayFormSlow = (A, K) => {
     let KnumArr = Array.from(K.toString()).map(x => Number(x));
-    // console.log(KnumArr);
-    // console.log(A);
+    console.log("checking out the arrays")
+    console.log(KnumArr);
+    console.log(A);
+    /**
+     * these are both of type number[]
+     */
+
+     /**
+      * this while loop moves from back to front unshift()-ing to our
+      * array, other wise it goes in "backwards"
+      * idk if that makes sense,
+      * it does, cool Let's log every iteration just to see it be added into
+      */
     let ans = [];
     let i = KnumArr.length - 1, j = A.length - 1;
+
+    console.log("the while loop adding");
     while (i >= 0 || j >= 0) {
         if (i < 0) {
             ans.unshift(A[j]);
@@ -146,9 +174,27 @@ var addToArrayFormSlow = (A, K) => {
             ans.unshift(KnumArr[i] + A[j]);
         }
         i--, j--;
+        console.log(ans);
     }
-    // console.log(ans);
+    console.log("end of while ans looks like")
+    console.log(ans);
+    console.log("**********");
+    /**
+     * out ans arr looks kinda like this [2,13,14,17]
+     * when it needs to look like this [3,4,5,7]
+     */
+    /**
+     * this for loop
+     * we step backwards to see if we need to "add" to the column in front
+     * aka to the 10's column or the 1,000's column and carry-over
+     * back from when we had to do addition in primary school
+     * got it
+     * line 200 takes into account creating a new column 
+     * ie [10,9,9,9] => [1,0,9,9,9]
+     * then line 203 just adds to the next "whatever" ya know lol I am losing my vocab :)
+     */
     let l = ans.length - 1;
+    console.log("the mathy for loop")
     for (let k = l; k >= 0; k--) {
         if (ans[k] >= 10) {
             ans[k] = ans[k] - 10;
@@ -158,15 +204,41 @@ var addToArrayFormSlow = (A, K) => {
                 ans[k - 1] += 1;
             }
         }
-        // console.log(ans);
+        console.log(ans);
     }
-
     return ans;
+    /**
+     * I am going to try to type from the bottom to not mess up line numbers
+     * okay
+     * I am going to un comment to log and run this function, 
+     * 
+     * 
+     * heard ok
+     */
 }
+/**
+ * important examples for me were
+ */
+// // one where A is longer
+// console.log(addToArrayFormSlow([1,2,0,0] , 34))
 
+// // one where K is "longer"
+// console.log()
+// console.log(addToArrayFormSlow([1,2,3] , 34000)); // [3,4,1,2,3]
 
+// one where there is carrying over at the end
+console.log()
+console.log(addToArrayFormSlow([9,9,9,9,6,7] ,568 ));
 
+// // then we both had issues with "larger" numbers
+// // test 1: 
+// // answer: works with addToArrayForm2 only [1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,5,7,9]
+// if (addToArrayFormSlow([1, 2, 6, 3, 0, 7, 1, 7, 1, 9, 7, 5, 6, 6, 4, 4, 0, 0, 6, 3], 516) == [1, 2, 6, 3, 0, 7, 1, 7, 1, 9, 7, 5, 6, 6, 4, 4, 0, 5, 7, 9]) {
+//     console.log("Got it correct")
+// } else { console.log("it's wrong") }
+// // nice lol okay I am going to run it and it is not going to be pretty, you can see all the test cases running with the steps
 
+// // understood okay this is too much I am going to comment out and take it slower
 
 
 
@@ -189,7 +261,7 @@ var addToArrayFormLia = (A, K) => {
 
     let rnt = Anum + K;
     // whatAmI(rnt);
-
+    
     let rntStr = rnt.toString();
     // whatAmI(rntStr);
 
@@ -288,12 +360,6 @@ var addToArrayForm2 = function (A, K) {
 // answer: works with addToArrayForm only [1,0,0,0,0,0,0,0,0,0,0] 
 // console.log(addToArrayForm([9,9,9,9,9,9,9,9,9,9], 1));
 
-// test 1: 
-// answer: works with addToArrayForm2 only [1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,5,7,9]
-// console.log(addToArrayForm2([1, 2, 6, 3, 0, 7, 1, 7, 1, 9, 7, 5, 6, 6, 4, 4, 0, 0, 6, 3], 516));
-// if (addToArrayForm2([1, 2, 6, 3, 0, 7, 1, 7, 1, 9, 7, 5, 6, 6, 4, 4, 0, 0, 6, 3], 516) == [1, 2, 6, 3, 0, 7, 1, 7, 1, 9, 7, 5, 6, 6, 4, 4, 0, 5, 7, 9]) {
-//     console.log("Got it correct")
-// } else { console.log("it's wrong") }
 
 
 
