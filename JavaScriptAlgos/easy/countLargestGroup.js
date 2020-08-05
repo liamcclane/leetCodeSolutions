@@ -33,7 +33,14 @@
  * @return {number}
  */
 var countLargestGroup = function (n) {
-    dict = {};
+    // this dictionary's keys are the sums the integers add up to
+    // the values of this dict is an array of numbers who's individual integers add up to it.
+    let dict = {};
+
+    // in this for loop we take the number and turn it into a string
+    // this loop though the "letters" parsing them back to type number and added 
+    // up the individual "letters" to the sum
+    // then add or whatnot to the dictionary
     for (let i = 1; i <= n; i++) {
         let strN = i.toString();
         let sum = 0;
@@ -46,11 +53,14 @@ var countLargestGroup = function (n) {
             dict[sum] = [i];
         }
     }
+    // console.log('dict');
     // console.log(dict);
     let maxLen = 0, count = 0;
+    // this loop looks though the dict looking for the longest val array
     for(let key in dict) {
         if(dict[key].length > maxLen) maxLen = dict[key].length;
     }
+    // this loop counts how many of them are at that max
     for(let key in dict) {
         if(dict[key].length === maxLen) count++;
     }

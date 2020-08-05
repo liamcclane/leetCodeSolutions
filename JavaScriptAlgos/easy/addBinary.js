@@ -46,7 +46,7 @@ var addBinary = function(a, b) {
         if (arrAns[i] >= 2) {
             if(arrAns[i] == 2) arrAns[i] = 0;
             if(arrAns[i] == 3) arrAns[i] = 1;
-            if (i + 1 >= l) { arrAns.push(1) }
+            if (i + 1 >= l) { arrAns.push(1) } // this line deals with having to "add" a new tens column
             else { arrAns[i+1] += 1; }
         }
     }
