@@ -47,12 +47,13 @@ var kthSmallest = function(root, k) {
     let allVals = [];
     
     const treeTraversal = (node, arr = []) => {
-        arr.push(node.val);
-        // empty
+        // empty 
+        // I check for existance before recursivly calling the function
         if(!node) {
             console.log("this should not be called");
-            return;
+            return [];
         }
+        arr.push(node.val);
         // left/right
         if(node.left || node.right) {
             // left
@@ -66,11 +67,12 @@ var kthSmallest = function(root, k) {
                 // console.log(arr, " arr line 33");
             }
         } else {
-            // no children
+            // no children becomes the base case
             return arr;
         }
         return arr;
     }
+    
     allVals = treeTraversal(root);
     // console.log(allVals, " allVals");
     if(allVals.length > 1){
