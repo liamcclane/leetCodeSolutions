@@ -41,7 +41,7 @@ const isPalindrome = function (s) {
     }
     return true;
 };
-
+console.log(isPalindrome("abc1cba"));
 
 // console.log(isPalindrome("A man, a plan, a canal: Panama"));
 // console.log();
@@ -141,7 +141,7 @@ var validPalindromeTimeConstraint = function (s) {
     }
     return false;
 };
-console.log(validP("abc"));
+// console.log(validP("abc"));
 // console.log();
 // console.log(validP("leqyxqopjzqdytivrzkdgmhchkgkpbdnewoubudgvykyqkcyoyeavbjplgodcocazrvhmarkrcozyuywostjdkxwghbaliccfqukgisqzqpukmaissranamsjawivxzbjqazzcaqfzsecgcfkzvvpjuinvhkjteoaqsmaedkifenmcmicgrwmmfubvpnrowszbofeyecwihgsemlwyipuzowyjapklsdbtupttabemanmgqbsatunrbhwleffelwhbrnutasbqgmnamebattputbdslkpajywozupiywlmesghiwceyefobzswornpvbufmmwrgcimcmnefikdeamsqaoetjkhvniujpvvzkfcgceszfqaczaqjbzxviwajsmanarssiamkupqzsigkuqfccilabhgwxkdjtsowyuyzocrkramhvrzacocdoglpjbvaeyoyckqykyvgdubuowendbpkgkhchmgdkzrvitydqzjpoqxyqel")); // true
 // console.log();
