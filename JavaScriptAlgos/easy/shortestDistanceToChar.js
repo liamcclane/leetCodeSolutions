@@ -25,13 +25,12 @@ var shortestToChar = function (S, C) {
                 return moveRight - ind;
             }
         }
-
-
     }
 
-    for (let i = 0; i < len; i++) {
-        ans.push(findChar(arrOfChars, C, i));
-    }
+    if(Objects.keys(dict) > 0) {return false;}
+    // for (let i = 0; i < len; i++) {
+    //     ans.push(findChar(arrOfChars, C, i));
+    // }
 
     return ans;
 
