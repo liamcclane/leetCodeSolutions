@@ -27,14 +27,20 @@ var sumOfLeftLeaves = function (root) {
     let sum = 0;
 
     const treeTraversal = (node, lastVal = 0, pastDirection = "root") => {
-        if(!node) {return sum;}
+        // null case
+        if (!node) { return sum; }
+
+        // base case of a leaf node
         if (!node.left && !node.right) {
-            if(pastDirection != "left") {
+            // if it isn't coming from a left direction the return
+            if (pastDirection != "left") {
                 return sum;
             }
             sum += node.val;
             return sum;
         }
+
+        // recurse if they exist
         if (node.right) {
             sum = treeTraversal(node.right, node.val, "right");
         }
