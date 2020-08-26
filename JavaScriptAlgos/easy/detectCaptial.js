@@ -19,24 +19,41 @@
  * @return {boolean}
  */
 var detectCapitalUse = function (word) {
+    // edge case of only one character
     if (word.length == 1) { return true; }
+
+    // helper method
     const isUpperCase = str => str === str.toUpperCase();
+
+    // if we are only given a word with only 2 characters
+    //  we only have to check the last letter for caps AND first letter lower case
     if (word.length == 2) {
         if ((isUpperCase(word.charAt(1))) && !isUpperCase(word.charAt(0))) {
             return false;
         }
         return true;
     }
+
+    // creating variables with centerIsCap undefined
     let centerIsCap, firstIsCap = isUpperCase(word.charAt(0));
+
+    // now loop though starting with the second character comparing with the one next to it
     for (let i = 1; i < word.length - 1; i++) {
+
+        // the moment we see the "center" adjacent characters not equaling each other
+        // we can kick out of the whole function and return false
         if (isUpperCase(word.charAt(i)) != isUpperCase(word.charAt(i + 1))) {
             return false;
         }
+        // else lets store info about the center
         centerIsCap = isUpperCase(word.charAt(i));
     }
-    if (centerIsCap) { 
-        if(!firstIsCap){ return false;}
-        return isUpperCase(word.charAt(word.length - 1)); 
+
+    // now that the loop has finished we check if the center characters 
+    // are capitalized and cross check it with the first letter to validate
+    if (centerIsCap) {
+        if (!firstIsCap) { return false; }
+        return isUpperCase(word.charAt(word.length - 1));
     }
     return !(isUpperCase(word.charAt(word.length - 1)));
     /**
