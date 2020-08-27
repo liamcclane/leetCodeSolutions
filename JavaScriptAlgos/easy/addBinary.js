@@ -70,3 +70,8 @@ var addBinary = function(a, b) {
  * Memory Usage: 39.5 MB, less than 9.33% of JavaScript online submissions for Add Binary.
  */
 console.log(addBinary("1111", "1111"));
+
+/**tags to look up later
+ * binary
+ * refactorMe
+ */

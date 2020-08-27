@@ -41,11 +41,15 @@
 var arrangeCoins = function (n) {
     let num = 0;
     let step = 0;
-    while(num<=n){
-        step ++;
+    while (num <= n) {
+        step++;
         num += step;
     }
     return step - 1;
+    /**
+     * Runtime: 104 ms, faster than 64.75% of JavaScript online submissions for Arranging Coins.
+     * Memory Usage: 38.4 MB, less than 46.23% of JavaScript online submissions for Arranging Coins.7
+     */
 };
 /**
  * @param {number} n
@@ -53,8 +57,8 @@ var arrangeCoins = function (n) {
  */
 var arrangeCoinsR = function (n) {
     let steps = 1, count = 0;
-    while(n>0){
-        if(n-count>steps+1){
+    while (n > 0) {
+        if (n - count > steps + 1) {
             count = count + steps;
             n--;
             steps++;
@@ -62,10 +66,17 @@ var arrangeCoinsR = function (n) {
             return steps;
         }
     }
-
+    /**
+     * Runtime: 92 ms, faster than 89.95% of JavaScript online submissions for Arranging Coins.
+     * Memory Usage: 38.5 MB, less than 29.63% of JavaScript online submissions for Arranging Coins.
+     */
 };
-for(let i = 1; i<21; i++){
+for (let i = 1; i < 21; i++) {
     console.log(`for ${i} number of coins ${arrangeCoins(i)} steps can be made`);
     console.log();
 }
+/**tags for later look up
+ * multipleSubmissions
+ * needsRecursionSolution
+ */
 

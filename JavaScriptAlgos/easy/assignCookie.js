@@ -105,3 +105,8 @@ console.log(findContentChildrenRitz([3, 1, 2], [1, 1]));
 console.log(findContentChildrenRitz([2, 4, 6, 1, 2, 3, 10], [1, 1, 1, 11, 3, 6, 6, 6]));
 // console.log();
 console.log(findContentChildrenRitz([1,2], [1,2,3]));
+
+/** tags for later look up
+ * RitzCollaboration
+ * nestedForLoops
+ */

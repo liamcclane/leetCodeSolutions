@@ -1,7 +1,10 @@
 /**989. Add to Array-Form of Integer
- * For a non-negative integer X, the array-form of X is an array of its digits in left to right order.  For example, if X = 1231, then the array form is [1,2,3,1].
+ * For a non-negative integer X, the array-form of X 
+ * is an array of its digits in left to right order.  
+ * For example, if X = 1231, then the array form is [1,2,3,1].
  * 
- * Given the array-form A of a non-negative integer X, return the array-form of the integer X+K.
+ * Given the array-form A of a non-negative integer X, 
+ * return the array-form of the integer X+K.
  * 
  * Example 1:
  * Input: A = [1,2,0,0], K = 34
@@ -22,7 +25,6 @@
  * Input: A = [9,9,9,9,9,9,9,9,9,9], K = 1
  * Output: [1,0,0,0,0,0,0,0,0,0,0]
  * Explanation: 9999999999 + 1 = 10000000000
- *  
  * 
  * Note：
  * 
@@ -300,40 +302,9 @@ var addToArrayForm2 = function (A, K) {
 // console.log(addToArrayForm([9,9,9,9,9,9,9,9,9,9], 1));
 
 
-
-
-
-// DEADCODE
-//
-
-// let num = 1;
-// for(let i = A.length- 1; i >= 0; i--){
-//     if (A[i] != 0){
-//         console.log(A[i]);
-//         K += num*A[i];
-//         console.log(K);
-//         num *= 10;        
-//     } else {
-//         // console.log(num);
-//         num *= 10;
-//     }
-// }
-// console.log(A.length);
-// let ans = Array.from(String(K, A.length));
-// return ans;
-
-// for(let i = 0; i < A.length; i++){
-//     if (i != A.length - 1){
-//         console.log(A[i]);
-//         num += A[i];
-//         console.log(num);
-//         num *= 10;
-
-//     } else {
-//         console.log(num);
-//         num += A[i];
-//     }
-// }
-// let num = A.pop();
-//     num += K;
-//     A.push(num);
+/**tags to look up later
+ * unfinished
+ * runtime error
+ * large input error
+ * multiple functions
+ */
