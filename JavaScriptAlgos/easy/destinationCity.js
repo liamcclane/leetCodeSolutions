@@ -32,19 +32,20 @@
  */
 const destCity = (paths) => {
     let dict = {};
-    if (paths.length == 0) { return "" }; // do you do this even when the "constraints" say it must be at least one length?
-    // okay I wasn't sure, if that is the case then no, and then we don't really need 
-    // line 38, but it'll kick out faster. lol Got it, just asking . . . 
-    if (paths.length == 1) { return paths[0][1] } // 
-    for (let i = 0; i < paths.length; i++) {  // ugh my editor says there is something wrong with the for loop, but idk what.
+    if (paths.length == 0) { return "" }; 
+    if (paths.length == 1) { return paths[0][1] } 
+    for (let i = 0; i < paths.length; i++) {
         // console.log(paths)
         let zeroPlace = paths[i][0];
         let firstPlace = paths[i][1];
 
+        // building the dict
         if (zeroPlace in dict) {
-            dict[zeroPlace][0] = true; // here dict[zeroPlace] evaluates to an object, then we create a new key 0 with a val true
+            // here dict[zeroPlace] evaluates to an object, then we create a new key 0 with a val true
+            dict[zeroPlace][0] = true; 
         } else {
-            dict[zeroPlace] = { 0: true }; // so here we are creating a key "new york" with a value of another object
+            // so here we are creating a key "new york" with a value of another object
+            dict[zeroPlace] = { 0: true }; 
         }
 
         if (firstPlace in dict) {
@@ -56,9 +57,7 @@ const destCity = (paths) => {
     }
     // console.log("dict");
     // console.log(dict);
-    // hey looks good to me, um, so we just not need to find the key, who's value dictonary only has one key
-    for (key in dict) { // right
-        // double in loop
+    for (key in dict) {
         if (!(0 in dict[key])) { return key }
     }
 };
@@ -76,5 +75,6 @@ console.log(destCity(ex2)); // A
 let ex3 = [["A", "Z"]];
 console.log(destCity(ex3)); // Z
 
-// lol my poor editor lol
-
+/**tags for later look up
+ * RitzCollaboration
+ */

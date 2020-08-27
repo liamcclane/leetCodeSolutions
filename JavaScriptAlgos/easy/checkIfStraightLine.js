@@ -25,4 +25,11 @@ var checkStraightLine = function (coordinates) {
         if (runningSlope != slope) {return false;}
     }
     return true;
+    /**
+     * Runtime: 72 ms
+     * Memory Usage: 36.8 MB
+     */
 };
+/**tags for later look up
+ * helperFunction
+ */

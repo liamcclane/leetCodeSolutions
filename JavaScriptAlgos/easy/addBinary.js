@@ -72,6 +72,5 @@ var addBinary = function(a, b) {
 console.log(addBinary("1111", "1111"));
 
 /**tags to look up later
- * binary
  * refactorMe
  */

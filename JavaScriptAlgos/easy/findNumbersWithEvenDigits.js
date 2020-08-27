@@ -28,14 +28,14 @@ var findNumbersRitz = function (nums) {
     for (let i = 0; i < nums.length; i++) {
         tally = 0;
         if (nums[i] % 10 == 0) {  //check if digit is zero added for numbers that end in 0 such as 580. 
-                                    // We still want to count that as a digit
+            // We still want to count that as a digit
             console.log("inside this if");
             console.log(nums[i]);
             nums[i] = nums[i] / 10; //if it is divide by ten to reduce digits and keep tally, hang on, i can;t remeber why I subtracted instead of addinf lol
             console.log(nums[i]);
             tally--;
         }
-        
+
         console.log(nums[i] / 10, "line 41"); // Hey :) did we fix it :) I think you did, I will submit to be sure, then would love to see how you would approach
         // sure :)
         while (nums[i] / 10 > 0) { //basically I counted the last digit, divide by ten, and keep track 
@@ -64,9 +64,9 @@ var findNumbersRitz = function (nums) {
 const findNumbersLiaStringParsing = nums => {
     let count = 0; // to be returned and added to
     let ansArr = [];
-    for(let i = 0; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i++) {
         let strNum = nums[i].toString();
-        if(strNum.length%2 == 0) {
+        if (strNum.length % 2 == 0) {
             console.log(nums[i], "nums line 100");
             console.log(typeof nums[i], "nums line 101");
             console.log(strNum, " line 102");
@@ -79,7 +79,7 @@ const findNumbersLiaStringParsing = nums => {
     }
     return count;
 }
-console.log(findNumbersLiaStringParsing([200,3001,4,55])); // lol make sense... let me submit and see how it goes
+console.log(findNumbersLiaStringParsing([200, 3001, 4, 55])); // lol make sense... let me submit and see how it goes
 /**
  * Runtime: 84 ms, faster than 28.22% of JavaScript online submissions for Find Numbers with Even Number of Digits.
  * Memory Usage: 37 MB, less than 28.61% of JavaScript online submissions for Find Numbers with Even Number of Digits.
@@ -105,26 +105,32 @@ console.log(findNumbersLiaStringParsing([200,3001,4,55])); // lol make sense... 
 
 
 const findNumbersLiaMathy = nums => {
-    
-    let count = 0;
-    let len = nums.length; 
 
-    for(let i = 0; i < len; i++) {
+    let count = 0;
+    let len = nums.length;
+
+    for (let i = 0; i < len; i++) {
         let tens = 10;
         let tally = 0;
-        let whileCatch = 0; // uhhhhh idk what is wrong, I would have to white board or pencile more for math shit
+        let whileCatch = 0;
+        // uhhhhh idk what is wrong, I would have to white board or pencil more for mathy stuff 
         // let me show you my string way lol cool
-        while(nums[i]/tens > 0 && whileCatch < 1000) {
-            nums[i] = nums[i]/tens;
+        while (nums[i] / tens > 0 && whileCatch < 1000) {
+            nums[i] = nums[i] / tens;
             tens *= 10;
             whileCatch++;
             tally++;
         }
         console.log(tally, " line 82");
-        if(tally % 2 == 0) {
+        if (tally % 2 == 0) {
             count++;
         }
     }
     return count;
 }
 // console.log(findNumbersLiaMathy([12,44,100,9]));
+
+/**tags for later look up
+ * RitzCollaboration
+ * multipleSubmissions
+ */

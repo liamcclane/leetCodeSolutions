@@ -41,3 +41,7 @@ var smallerNumbersThanCurrent = function(nums) {
  * Runtime: 88 ms, faster than 83.00% of JavaScript online submissions for How Many Numbers Are Smaller Than the Current Number.
  * Memory Usage: 38.9 MB, less than 24.97% of JavaScript online submissions for How Many Numbers Are Smaller Than the Current Number.
  */
+/**tags for later look up
+ * nestedForLoops
+ * refactorMe
+ */

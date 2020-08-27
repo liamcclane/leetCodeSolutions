@@ -41,6 +41,10 @@ var canPlaceFlowers = function (flowerbed, n) {
     // console.log(possibleFlowersToAdd);
     if (possibleFlowersToAdd >= n) return true;
     return false;
+    /**
+     * Runtime: 72 ms
+     * Memory Usage: 37.1 MB
+     */
 };
 // console.log(canPlaceFlowers([1, 0, 0, 0, 1], 1)); // true
 // console.log(canPlaceFlowers([1, 0, 0, 0, 1, 0, 0], 2)); // true 
@@ -49,6 +53,8 @@ var canPlaceFlowers = function (flowerbed, n) {
 // console.log(canPlaceFlowers([1, 0, 0], 1)); // true
 // console.log(canPlaceFlowers([0, 1, 0], 1)); // false
 console.log(canPlaceFlowers([0], 1)); // true
+
+
 
 
 
@@ -122,3 +128,6 @@ const wrong = (flowerbed, n) => {
     }
     return false;
 }
+
+/**tags to look up later
+ */

@@ -109,4 +109,5 @@ console.log(findContentChildrenRitz([1,2], [1,2,3]));
 /** tags for later look up
  * RitzCollaboration
  * nestedForLoops
+ * helperFunction
  */

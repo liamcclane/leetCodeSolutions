@@ -35,32 +35,36 @@
  * @param {number} n
  * @return {number[]}
  */
-var getNoZeroIntegers = function(n) {
+var getNoZeroIntegers = function (n) {
     let ele1 = 1, ele2 = n - ele1;
-    while(containsZeros(ele1.toString(), ele2.toString())){
+    /**Contains Zeros
+     * this function takes too strings 
+     * loops though them looking to see if they contain a zero
+     * @param {string} x 
+     * @param {string} y 
+     * @returns {boolean} 
+     */
+    const containsZeros = (x, y) => {
+        for (let i = 0; i < x.length; i++) {
+            if (x[i] === "0") return true;
+        }
+        for (let i = 0; i < y.length; i++) {
+            if (y[i] === "0") return true;
+        }
+        return false;
+    };
+    while (containsZeros(ele1.toString(), ele2.toString())) {
         ele1++;
         ele2--;
     }
-    return [ele1,ele2];
+    return [ele1, ele2];
 };
-/**
- * 
- * @param {*} x 
- * @param {*} y 
- */
-function containsZeros(x,y){
-    
-    for(let i = 0; i < x.length; i++) {
-        if(x[i] === "0") return true;
-    }
-    
-    for(let i = 0; i < y.length; i++) {
-        if(y[i] === "0") return true;
-    }
-    return false;
-}
 
 /**
  * Runtime: 76 ms, faster than 22.61% of JavaScript online submissions for Convert Integer to the Sum of Two No-Zero Integers.
  * Memory Usage: 36.2 MB, less than 5.05% of JavaScript online submissions for Convert Integer to the Sum of Two No-Zero Integers.
 */
+/**tags for later look up
+ * helperFunction
+ * refactorMe
+ */

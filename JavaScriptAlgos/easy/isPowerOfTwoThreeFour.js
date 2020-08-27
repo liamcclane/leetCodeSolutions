@@ -1,4 +1,4 @@
-/**
+/**231. Is Power of Two
  * Given an integer, write a function to determine if it is a power of two.
  * 
  * Example 1:
@@ -15,7 +15,7 @@
  * 
  * Input: 218
  * Output: false
- * @param {number} n
+ *@param {number} n
  * @return {boolean}
  */
 var isPowerOfTwo = function (n) {
@@ -23,6 +23,12 @@ var isPowerOfTwo = function (n) {
     let x = Math.round(Math.log2(n));
     if (2 ** x === n) return true
     return false;
+    /**
+     * Runtime: 64 ms
+     * Memory Usage: 35.5 MB
+     * Your memory usage beats 99.88 % of javascript submissions.
+     * Your runtime beats 99.64 % of javascript submissions.
+     */
 };
 // for (let i = 1; i <= 64; i++) {
 //     if (isPowerOfTwo(i)) {
@@ -31,7 +37,7 @@ var isPowerOfTwo = function (n) {
 //         console.log("\t", isPowerOfTwo(i), i);
 //     }
 // }
-/**
+/**326. Is Power of Three
  * Given an integer, write a function to determine if it is a power of three.
  * 
  * Example 1:
@@ -59,7 +65,12 @@ var isPowerOfThree = function (n) {
         if (n === 1) return true;
         n = n / 3;
     }
-    return false
+    return false;
+    /**
+     * Runtime: 220 ms
+     * Memory Usage: 48.3 MB
+     * Your runtime beats 98.19 % of javascript submissions
+     */
 };
 // for (let i = 1; i <= 64; i++) {
 //     if (isPowerOfThree(i)) {
@@ -91,11 +102,9 @@ var isPowerOfFour = function (num) {
         return true;
     }
     return false;
+    /**
+     * Runtime: 64 ms
+     * Memory Usage: 35.5 MB  
+     * Your runtime beats 100.00 % of javascript submissions.
+     */
 };
-// for (let i = 1; i <= 64; i++) {
-//     if (isPowerOfFour(i)) {
-//         console.log(isPowerOfFour(i), i);
-//     } else {
-//         console.log("\t", isPowerOfFour(i), i);
-//     }
-// }

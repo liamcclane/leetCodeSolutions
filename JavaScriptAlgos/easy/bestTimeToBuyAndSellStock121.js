@@ -54,3 +54,7 @@ const stockProfit = arr => {
 }
 
 console.log(stockProfit([7, 6, 4, 3, 1]));
+/**tags to look up later
+ * unfinished
+ * helperFunction?
+ */

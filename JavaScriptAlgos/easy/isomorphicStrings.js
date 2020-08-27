@@ -1,4 +1,4 @@
-/**Isomorphic Strings**
+/**205. Isomorphic Strings
  * 
  * Given two strings s and t, determine if they are isomorphic.
  * 
@@ -45,6 +45,11 @@ var isIsomorphic = function(s, t) {
     }
     // console.log(dict);
     return true;
+    /**
+     * Runtime: 68 ms
+     * Memory Usage: 36.1 MB
+     * Your runtime beats 99.74 % of javascript submissions.
+     */
 };
 // console.log(isIsomorphic("egg","too"));
 console.log(isIsomorphic("ab","aa")); // false

@@ -72,3 +72,7 @@ console.log(detectCapitalUse("LEETCODE"), "LEETCODE ");
 console.log(detectCapitalUse("LeeTCode"), "LeeTCode ");
 console.log(detectCapitalUse("cC"), "cC ");
 console.log(detectCapitalUse("cCD"), "cC ");
+
+/**tags for later look up
+ * helperFunction
+ */

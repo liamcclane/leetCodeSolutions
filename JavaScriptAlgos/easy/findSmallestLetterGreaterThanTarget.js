@@ -53,5 +53,12 @@ var nextGreatestLetter = function (letters, target) {
         }
     }
     return alphabet[i];
+    /**
+     * Runtime: 92 ms
+     * Memory Usage: 34 MB
+     */
 };
 nextGreatestLetter(['a', 'b', 'c'], 'd');
+/**tags for later look up
+ * 
+ */

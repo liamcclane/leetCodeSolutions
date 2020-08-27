@@ -18,7 +18,8 @@
  * Example 2:
  * Input: sentence = "this problem is an easy problem", searchWord = "pro"
  * Output: 2
- * Explanation: "pro" is prefix of "problem" which is the 2nd and the 6th word in the sentence, but we return 2 as it's the minimal index.
+ * Explanation: "pro" is prefix of "problem" which is the 2nd and the 6th word in the sentence, 
+ * but we return 2 as it's the minimal index.
  * 
  * Example 3:
  * Input: sentence = "i am tired", searchWord = "you"
@@ -52,4 +53,7 @@ var isPrefixOfWord = function (sentence, searchWord) {
 /**
  * Runtime: 80 ms, faster than 31.37% of JavaScript online submissions for Check If a Word Occurs As a Prefix of Any Word in a Sentence.
  * Memory Usage: 36.1 MB, less than 33.85% of JavaScript online submissions for Check If a Word Occurs As a Prefix of Any Word in a Sentence.
+ */
+/**tags for later look up
+ * 
  */

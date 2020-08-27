@@ -1,4 +1,4 @@
-/**
+/**1002. Find Common Characters
  * Given an array A of strings made only from lowercase letters, 
  * return a list of all characters that show up in all strings within the list 
  * (including duplicates).  
@@ -57,6 +57,10 @@ var commonChars = function(A) {
         }
     }
     return ans;
+    /**
+     * Runtime: 92 ms
+     * Memory Usage: 43.3 MB
+     */
 };
 
 ex1 = ["bella", "roller", "label"];
@@ -77,3 +81,7 @@ console.log(commonChars(ex1));
 //         }
 //     }
 // }
+/**tags for later look up
+ * nestedForLoops
+ * refactorMe
+ */

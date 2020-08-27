@@ -59,7 +59,7 @@ console.log(heightChecker([5, 1, 2, 3, 4]));
 console.log(heightChecker([1, 2, 3, 4, 5]));
 
 // okay, so the .sort()
-//  takes a function with params (a, b) and returns either a positive or negative num then switches the indexes
+// takes a function with params (a, b) and returns either a positive or negative num then switches the indexes
 // also it sorts that array! Thus, I cannot compare sorted and heights. they are the same thing... 
 // so I have to make a copy, but without the .slice(0,len) function it is just a pointer,
 // a reference to heights, therefore when it gets sorted on line 85 it is still "looking" 

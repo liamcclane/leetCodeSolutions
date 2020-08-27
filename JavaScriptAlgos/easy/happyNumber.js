@@ -50,4 +50,9 @@ var isHappy = function (n) {
 /**
  * Runtime: 208 ms, faster than 5.01% of JavaScript online submissions for Happy Number.
  * Memory Usage: 46.7 MB, less than 5.09% of JavaScript online submissions for Happy Number.
-*/
+ */
+
+/**tags for later look up
+ * nestedForLoops
+ * refactorMe
+ */

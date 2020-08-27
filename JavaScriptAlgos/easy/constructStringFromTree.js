@@ -90,3 +90,6 @@ ex2.left.right = new TreeNode(4);
 
 console.log(tree2str(ex1));
 // console.log(tree2str(ex2));
+/**tags for later look up
+ * unfinished
+ */

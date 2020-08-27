@@ -118,3 +118,10 @@ var containsNearbyDuplicate = function (nums, k) {
 var containsNearbyAlmostDuplicate = function(nums, k, t) {
     
 };
+
+
+/**tags for later look up
+ * unfinished
+ * nestedForLoops
+ * refactorMe
+ */

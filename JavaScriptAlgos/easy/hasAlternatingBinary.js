@@ -1,5 +1,6 @@
-/**
- * Given a positive integer, check whether it has alternating bits: namely, if two adjacent bits will always have different values.
+/**693. Binary Number with Alternating Bits
+ * Given a positive integer, check whether it has alternating bits: namely, if two 
+ * adjacent bits will always have different values.
  * 
  * Example 1:
  * Input: 5
@@ -28,20 +29,23 @@
  * @return {boolean}
  */
 var hasAlternatingBits = function(n) {
-    // console.log((1).toString(2));
-    // console.log((2).toString(2));
-    // console.log((3).toString(2));
-    // console.log((4).toString(2));
-    // console.log((5).toString(2));
     let str = (n).toString(2);
     let strCopy = str[0];
     for(let i = 1; i < str.length; i++){
         if(strCopy[i-1] == str[i]) {
-            return false
+            return false;
         } else {
             strCopy += str[i];
         }
     }
     return true;
+    /**
+     * Runtime: 56 ms
+     * Memory Usage: 33.8 MB
+     * Your runtime beats 100.00 % of javascript submissions
+     */
 };
 console.log(hasAlternatingBits(5));
+/**tags for later look up
+ * numberToBinaryString
+ */

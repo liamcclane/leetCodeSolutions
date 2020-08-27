@@ -1,4 +1,4 @@
-/**
+/**38. Count and Say
  * The count-and-say sequence is the sequence of integers with the first five terms as following:
  * 1.     1
  * 2.     11
@@ -49,7 +49,16 @@ function countNsay(count, str) {
   newStr += charCount + "" + char;
   return countNsay(count - 1, newStr);
 }
+/**
+ * Runtime: 68 ms
+ * Memory Usage: 35.8 MB
+ */
 for(let val of [1,2,3,4,5,6,7]){
   console.log(`${val}.\t${countAndSay(val)}`);
   console.log();
 }
+
+/**tags for later look up
+ * helperFunction
+ * recursion
+ */

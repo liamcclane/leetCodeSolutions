@@ -304,7 +304,7 @@ var addToArrayForm2 = function (A, K) {
 
 /**tags to look up later
  * unfinished
- * runtime error
- * large input error
- * multiple functions
+ * runtimeError
+ * largeInputError
+ * multipleSubmissions
  */
