@@ -1,5 +1,5 @@
 const ListNode = require('./../dataStructures/ListNode');
-/*****Merge Two Sorted List********
+/*****Merge Two Sorted List - 21********
  * 
  * Merge two sorted linked lists and return it as a new list. 
  * The new list should be made by splicing together the nodes of the first two lists.
@@ -15,7 +15,7 @@ const ListNode = require('./../dataStructures/ListNode');
 function mergeTwoLists(l1, l2) {
     if (!l1 && !l2) {
         return null
-    } else if (!l1&& l2 ) {
+    } else if (!l1 && l2) {
         return l2;
     } else if (l1 && !l2) {
         return l1;
@@ -62,10 +62,16 @@ function mergeTwoLists(l1, l2) {
             add(ans, r2.val);
             r2 = r2.next;
         }
-    } 
+    }
     // alternatively, we could 'run' down the ans list
     // then just add the leftover node list
     return ans;
+    /**
+     * Runtime: 68 ms
+     * Memory Usage: 38.4 MB
+     * Your runtime beats 99.53 % of javascript submissions.
+     * Your memory usage beats 60.97 % of javascript submissions.
+     */
 };
 
 let list1 = new ListNode(1);
@@ -82,3 +88,6 @@ list2.print();
 mergeTwoLists(list1, list2).print();
 // mergeTwoLists(null, null); // return null
 
+/**tags for later look up
+ * refactorMe
+ */

@@ -40,3 +40,6 @@ var maxProduct = function (nums) {
  * Runtime: 80 ms, faster than 41.22% of JavaScript online submissions for Maximum Product of Two Elements in an Array.
  * Memory Usage: 37 MB, less than 12.50% of JavaScript online submissions for Maximum Product of Two Elements in an Array.
  */
+/**tags for late look up
+ * nestedForLoops
+ */

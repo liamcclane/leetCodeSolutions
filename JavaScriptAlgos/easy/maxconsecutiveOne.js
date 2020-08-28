@@ -9,17 +9,17 @@
  * @param {number[]} nums
  * @return {number}
  */
-var findMaxConsecutiveOnes = function(nums) {
+var findMaxConsecutiveOnes = function (nums) {
     let max = 0, count = 0;
-    
-    for(let i = 0; i < nums.length; i++) {
-        if(nums[i]){count++;}
-        if(count > max) {max = count;}
-        if (nums[i] != 1){count = 0;}
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i]) { count++; }
+        if (count > max) { max = count; }
+        if (nums[i] != 1) { count = 0; }
     }
-    
+
     return max;
-    
+
 };
 /**
  * Runtime: 72 ms, faster than 95.24% of JavaScript online submissions for Max Consecutive Ones.

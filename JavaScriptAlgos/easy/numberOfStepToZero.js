@@ -1,5 +1,7 @@
-/**
- * Given a non-negative integer num, return the number of steps to reduce it to zero. If the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
+/**1342. Number of Steps to Reduce a Number to Zero
+ * Given a non-negative integer num, return the number of steps to reduce it to zero. 
+ * If the current number is even, you have to divide it by 2, otherwise, you have 
+ * to subtract 1 from it.
  * 
  * Example 1:
  * Input: num = 14
@@ -27,15 +29,28 @@
  * @param {number} num
  * @return {number}
  */
-var numberOfSteps  = function(num) {
+var numberOfSteps = function (num) {
     let count = 0;
-    while(num>0){
-        if(num%2===0){
-            num = num/2;
+    while (num > 0) {
+        if (num % 2 === 0) {
+            num = num / 2;
         } else {
-            num --;
+            num--;
         }
         count++;
     }
     return count;
+    /**
+     * Runtime: 60 ms
+     * Memory Usage: 33.7 MB
+     * Your runtime beats 99.32 % of javascript submissions.
+     * Your memory usage beats 94.30 % of javascript submissions
+     */
 };
+const numOfStepRecur = () => {
+
+}
+/**tags for late look up
+ * recursion
+ * refactorMe
+ */
