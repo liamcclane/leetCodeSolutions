@@ -48,4 +48,10 @@ var kidsWithCandies = function (candies, extraCandies) {
         ans.push(b);
     }
     return ans;
+    /**
+     * Runtime: 60 ms
+     * Memory Usage: 34.1 MB
+     * Your runtime beats 99.50 % of javascript submissions.
+     * Your memory usage beats 78.13 % of javascript submissions.
+     */
 };

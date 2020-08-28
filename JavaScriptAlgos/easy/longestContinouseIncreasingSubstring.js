@@ -31,4 +31,4 @@ var findLengthOfLCIS = function (nums) {
 /**
  * Runtime: 80 ms, faster than 36.61% of JavaScript online submissions for Longest Continuous Increasing Subsequence.
  * Memory Usage: 38.5 MB, less than 10.75% of JavaScript online submissions for Longest Continuous Increasing Subsequence.
-*/
+ */

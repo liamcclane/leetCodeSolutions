@@ -1,5 +1,4 @@
-/**
- * LUCKY NUMBERS IN A MATRIX - 1380
+/**LUCKY NUMBERS IN A MATRIX - 1380
  * Given a m * n matrix of distinct numbers, 
  * return all lucky numbers in the matrix in any order.
  *
@@ -79,6 +78,12 @@ function luckyNum(matrix) {
         }
     }
     return [];
+    /**
+     * Runtime: 84 ms
+     * Memory Usage: 39.3 MB
+     * Your runtime beats 69.23 % of javascript submissions.
+     * Your memory usage beats 53.23 % of javascript submissions.
+     */
 }
 let ex1 = [
     [3, 7, 8],
@@ -100,12 +105,7 @@ console.log(luckyNum(ex1));
 console.log(luckyNum(ex2));
 console.log(luckyNum(ex3));
 
-
-
-
-
-
-
-
-
+/**tags for later look up
+ * nestedForLoops
+ */
 

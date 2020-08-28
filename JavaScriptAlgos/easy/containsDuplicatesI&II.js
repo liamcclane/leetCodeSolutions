@@ -26,6 +26,12 @@ var containsDuplicate = function (nums) {
         else dict[val] = 1;
     }
     return false;
+    /**
+     * Runtime: 72 ms
+     * Memory Usage: 42.7 MB
+     * Your runtime beats 97.90 % of javascript submissions.
+     * Your memory usage beats 55.44 % of javascript submissions.
+     */
 };
 
 
@@ -92,36 +98,15 @@ var containsNearbyDuplicate = function (nums, k) {
         }
     }
     return false;
+    /**
+     * Runtime: 96 ms, faster than 30.36% of JavaScript online submissions for Contains Duplicate II.
+     * Memory Usage: 57.2 MB, less than 5.26% of JavaScript online submissions for Contains Duplicate II.
+     */
 };
 // console.log(containsNearbyDuplicate([1, 2, 3, 1], 3));
 // console.log(containsNearbyDuplicate([1, 0, 1, 1], 1));
 // console.log(containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2));
-/**
- * Runtime: 96 ms, faster than 30.36% of JavaScript online submissions for Contains Duplicate II.
- * Memory Usage: 57.2 MB, less than 5.26% of JavaScript online submissions for Contains Duplicate II.
- */
-
-
-
-
-
-
-
-
-/************************************************/
- /**Contains Duplicate III
- * @param {number[]} nums
- * @param {number} k
- * @param {number} t
- * @return {boolean}
- */
-var containsNearbyAlmostDuplicate = function(nums, k, t) {
-    
-};
-
-
 /**tags for later look up
- * unfinished
  * nestedForLoops
  * refactorMe
  */

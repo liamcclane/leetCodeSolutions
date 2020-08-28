@@ -1,4 +1,4 @@
-/** 
+/** 771. Jewels and Stones
  * You're given strings J representing the types of stones that are jewels, 
  * and S representing the stones you have.  
  * Each character in S is a type of stone you have.  
@@ -17,12 +17,12 @@
  * @return {number}
  */
 var numJewelsInStones = function(J, S) {
-    // creating a dictoary of jewels to cross check if any of your stones are Jewels
+    // creating a dictionary of jewels to cross check if any of your stones are Jewels
     let jewels = {};
-    // ctreating a count to increase whenever you find out that your stone is in fact a Jewel
+    // creating a count to increase whenever you find out that your stone is in fact a Jewel
     let count = 0;
     
-    // creating the dictonary
+    // creating the dictionary
     for(let jewel of J){
         if(jewel in jewels) jewels[jewel] ++;
         else jewels[jewel] = 0;
@@ -35,4 +35,10 @@ var numJewelsInStones = function(J, S) {
     
     // returning the result
     return count;
+    /**
+     * Runtime: 64 ms
+     * Memory Usage: 34.4 MB
+     * Your runtime beats 98.82 % of javascript submissions.
+     * Your memory usage beats 86.43 % of javascript submissions.
+     */
 };
