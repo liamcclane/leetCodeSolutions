@@ -43,3 +43,6 @@ console.log(generate(6));
  * Runtime: 92 ms, faster than 7.09% of JavaScript online submissions for Pascal's Triangle.
  * Memory Usage: 33.3 MB, less than 80.52% of JavaScript online submissions for Pascal's Triangle.
  */
+/**tags for later look up
+ * nestedForLoops
+ */
