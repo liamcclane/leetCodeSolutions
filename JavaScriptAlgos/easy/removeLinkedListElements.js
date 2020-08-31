@@ -4,16 +4,16 @@
  *     this.val = val;
  *     this.next = null;
  * }
- * const add = (val) =>{
- *  // code
- * }
- * const print = () =>{
- *  // code
- * }
  */
 const ListNode = require('../dataStructures/ListNode');
 
-/**
+/**203. Remove Linked List Elements
+ * Remove all elements from a linked list of integers that have value val.
+ * 
+ * Example:
+ * 
+ * Input:  1->2->6->3->4->5->6, val = 6
+ * Output: 1->2->3->4->5
  * @param {ListNode} head
  * @param {number} val
  * @return {ListNode}
@@ -52,6 +52,12 @@ var removeElements = function (head, val) {
         }
     }
     return returnHead;
+    /**
+     * Runtime: 88 ms
+     * Memory Usage: 38.8 MB
+     * Your runtime beats 94.47 % of javascript submissions.
+     * Your memory usage beats 98.62 % of javascript submissions.
+     */
 };
 
 // ***********************

@@ -49,6 +49,11 @@ var matrixReshape = function (nums, r, c) {
         }
     }
     return arr;
+    /**
+     * Runtime: 92 ms
+     * Memory Usage: 42.5 MB
+     * Your runtime beats 97.20 % of javascript submissions.
+     */
 };
 // console.log(matrixReshape([[1, 2], [3, 4]], 1, 4));
 // console.log(matrixReshape([[1, 2], [3, 4]], 2, 4));

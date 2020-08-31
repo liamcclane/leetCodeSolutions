@@ -35,19 +35,14 @@ var largeGroupPositions = function(S) {
             }
             count = 1;
         }
-        // console.log(`count`);
-        // console.log(count);
-        // console.log(`ans`);
-        // console.log(ans);
     }
     return ans;
+    /**
+     * Runtime: 64 ms, faster than 96.30% of JavaScript online submissions for Positions of Large Groups.
+     * Memory Usage: 37.1 MB, less than 25.00% of JavaScript online submissions for Positions of Large Groups.
+     */
 };
 
 console.log(largeGroupPositions("aaa"));
 // console.log(largeGroupPositions("abcddddddeeeeeefghxxxx"));
 // console.log(largeGroupPositions("abcdddeeeeaabbbcd"));
-
-/**
- * Runtime: 64 ms, faster than 96.30% of JavaScript online submissions for Positions of Large Groups.
- * Memory Usage: 37.1 MB, less than 25.00% of JavaScript online submissions for Positions of Large Groups.
- */

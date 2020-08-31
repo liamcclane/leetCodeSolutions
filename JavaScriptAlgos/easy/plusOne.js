@@ -41,8 +41,17 @@ console.log(plusOne([9,9]));
 // I think after we increase, loop thought to see if any of them are === 10
 // if they are change the one in front of it.... 
 // which might be tricky with 999... agreed
-// can we use a if statement for yhe last index and if it 9 start moving backwards? Or, will that invoke several if's?
+// can we use a if statement for yhe last index and if it 9 start moving backwards?
+// Or, will that invoke several if's?
 
 // I like the move backwards thing.... (thumbs up)
 // lol YES Perf
 // we'll be in contact and keep at it. Today Felt good 
+// RitzCollaboration
+
+/**
+ * Runtime: 68 ms
+ * Memory Usage: 33.7 MB
+ * Your runtime beats 90.68 % of javascript submissions.
+ * Your memory usage beats 58.03 % of javascript submissions.
+ */

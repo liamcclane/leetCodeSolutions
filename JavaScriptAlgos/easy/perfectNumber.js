@@ -25,3 +25,8 @@ var checkPerfectNumber = function (num) {
     if (sum === num) return true;
     return false;
 };
+/**
+ * Runtime: 4036 ms
+ * Memory Usage: 36.3 MB
+ * Your memory usage beats 81.97 % of javascript submissions.
+ */
