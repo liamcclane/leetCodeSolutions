@@ -1,4 +1,4 @@
-/**
+/**1207. Unique Number of Occurrences
  * Given an array of integers arr, write a function that returns true if and only if 
  * the number of occurrences of each value in the array is unique.
  * 
@@ -18,31 +18,37 @@
  * 
  * Input: arr = [-3,0,1,-3,1,1,1,-3,10,0]
  * Output: true
- */
-
-/**
- * This function checks if there is a unique amount of each number in the array
  * @param {number[]} arr : a list of numbers, most of the time repeated
  * @return {boolean} : returns true if there is unique amounts or different numbers
  */
-var uniqueOccurrences = function(arr) {
+var uniqueOccurrences = function (arr) {
     let numFrequ = {};
-    for(let n of arr){
-        if(n in numFrequ) numFrequ[n] += 1;
+    for (let n of arr) {
+        if (n in numFrequ) numFrequ[n] += 1;
         else numFrequ[n] = 1;
     }
     // console.log(numFrequ);
     let rep = [];
-    for(let key in numFrequ){
-        for(let v of rep){
-            if(v==numFrequ[key]) return false
+    for (let key in numFrequ) {
+        for (let v of rep) {
+            if (v == numFrequ[key]) return false
         }
         rep.push(numFrequ[key]);
     }
     return true;
-    
+    /**
+     * Runtime: 60 ms
+     * Memory Usage: 34.6 MB
+     * Your runtime beats 99.50 % of javascript submissions
+     * Your memory usage beats 75.44 % of javascript submissions.
+     */
 };
 
 // console.log(uniqueOccurrences([66,55]))
-console.log(uniqueOccurrences([1,1,1,2,2,3]))
-console.log(uniqueOccurrences([1,1,2,2,3]))
+console.log(uniqueOccurrences([1, 1, 1, 2, 2, 3]))
+console.log(uniqueOccurrences([1, 1, 2, 2, 3]))
+
+/**tags for late look up
+ * nestedForLoops
+ * refactorMe
+ */
