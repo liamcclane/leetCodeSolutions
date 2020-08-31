@@ -3,8 +3,6 @@
  * 
  * Return the running sum of nums.
  * 
- *  
- * 
  * Example 1:
  * 
  * Input: nums = [1,2,3,4]
@@ -19,10 +17,6 @@
  * 
  * Input: nums = [3,1,2,10,1]
  * Output: [3,4,6,16,17]
- * /
-/** Running Sum
- * this function returns an array of the running 
- * sums going down the array
  * @param {number[]} nums
  * @return {number[]}
  */
@@ -30,7 +24,8 @@ var runningSum = function (nums) {
     let runSum = 0;
     return nums.map(ele => runSum += ele);
 };
-/**Runtime: 68 ms, faster than 88.61% of JavaScript online submissions for Running Sum of 1d Array.
+/**
+ * Runtime: 68 ms, faster than 88.61% of JavaScript online submissions for Running Sum of 1d Array.
  * Memory Usage: 35.9 MB, less than 100.00% of JavaScript online submissions for Running Sum of 1d Array.
  */
 

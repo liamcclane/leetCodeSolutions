@@ -1,4 +1,4 @@
-/**
+/**13. Roman to Integer
  * Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
  * 
  * Symbol       Value
@@ -61,16 +61,22 @@ var romanToInt = function (s) {
     };
     let ans = dict[s[0]];
     // let ans = 0;
-    for (let i = 0; i < s.length-1; i++) {
-        let run = dict[s[i+1]];
-        if(dict[s[i]] < run) {
-            ans += run - dict[s[i]] -dict[s[i]];
+    for (let i = 0; i < s.length - 1; i++) {
+        let run = dict[s[i + 1]];
+        if (dict[s[i]] < run) {
+            ans += run - dict[s[i]] - dict[s[i]];
         } else {
             ans += run;
         }
         // console.log(ans);
     }
     return ans;
+    /**
+     * Runtime: 160 ms
+     * Memory Usage: 42.2 MB
+     * Your runtime beats 81.01 % of javascript submissions.
+     * Your memory usage beats 61.96 % of javascript submissions.
+     */
 };
 
 console.log(romanToInt("XXIX")); // 29
