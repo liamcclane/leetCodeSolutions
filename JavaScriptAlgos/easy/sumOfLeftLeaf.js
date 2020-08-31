@@ -69,3 +69,6 @@ console.log();
 
 const singleNode = new TreeNode(22);
 console.log(sumOfLeftLeaves(singleNode));
+/**tags for later look up
+ * recursion
+ */

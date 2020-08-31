@@ -28,6 +28,6 @@ var mySqrt = function(x) {
     return ans-1;
 };
 /**
-Runtime: 152 ms, faster than 7.42% of JavaScript online submissions for Sqrt(x).
-Memory Usage: 37.5 MB, less than 11.27% of JavaScript online submissions for Sqrt(x).
-*/
+ * Runtime: 152 ms, faster than 7.42% of JavaScript online submissions for Sqrt(x).
+ * Memory Usage: 37.5 MB, less than 11.27% of JavaScript online submissions for Sqrt(x).
+ */
