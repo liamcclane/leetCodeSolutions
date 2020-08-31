@@ -24,3 +24,6 @@ var getRow = function (rowIndex) {
      * Memory Usage: 33.9 MB, less than 51.80% of JavaScript online submissions for Pascal's Triangle II.
      */
 };
+/**tags for later look up
+ * nestedWhileLoops
+ */
