@@ -52,26 +52,9 @@ const lia = (s, indices) => {
     return ansStr;
 };
 
-// notice how these are in a numerical sequence? It seems to have trouble when the indices deviate from chronological order
-// dunno if you look at mine, i had the same issues
 // console.log(lia("codeleet", [4, 5, 6, 7, 0, 1, 2, 3]));
 console.log(lia("artm", [3, 0, 1, 2]), "should say trma"); 
 console.log(lia("artm", [1,0,2,3]), "should say ratm");
-// woah, weird what is happening....
-
-
-
-/** I was getting the same CDOE problem earlier, yeah I couldn't figure that out
- * weird... like off by one.. slightly, I wonder if it has to do with some kind of
- * swaping and then swapping again if you ran into a number lower than it down the line.
- * I was kind of afraid of that
- * oh wait my answe is still wrong... it says leetcdoe.... huh
- *
- *
- *  okay looking at your old code what was happening there?
- * the indices weren't matching up for some reason. I'll show you, oh i had started to move stuff around
- */
-
 
 // example 1: "leetcode"
 console.log(restoreString("codeleet", [4,5,6,7,0,2,1,3]), "<- leetcode");

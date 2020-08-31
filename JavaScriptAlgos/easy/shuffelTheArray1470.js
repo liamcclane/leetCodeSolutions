@@ -3,7 +3,6 @@
  * 
  * Return the array in the form [x1,y1,x2,y2,...,xn,yn].
  * 
- * 
  * Example 1:
  * 
  * Input: nums = [2,5,1,3,4,7], n = 3
@@ -25,28 +24,52 @@
  * @return {number[]}
  */
 var shuffle = function (nums, n) {
+    let ans = [];
+    for (let i = 0, j = n; i < n; i++, j++) {
+        ans.push(nums[i]);
+        ans.push(nums[j]);
+    }
+    return ans;
+    /**
+     * Runtime: 112 ms, faster than 22.52% of JavaScript online submissions for Shuffle the Array.
+     * Memory Usage: 39.3 MB, less than 6.77% of JavaScript online submissions for Shuffle the Array.
+     */
+};
+
+
+/**
+ * @param {number[]} nums
+ * @param {number} n
+ * @returns {number[]}
+ */
+const again = (nums, n) => {
     let splitNest = [], pointer = 0, ansArr = [];
     let arrTemp = [];
     while (pointer < nums.length) {
         arrTemp.push(nums[pointer]);
-        if((pointer+1) % n === 0){
+        if ((pointer + 1) % n === 0) {
             splitNest.push(arrTemp);
             arrTemp = [];
         }
         pointer++;
     }
-    // console.log(splitNest);
+    console.log(splitNest);
 
-    for(let j = 0; j < splitNest[0].length; j++){
+    for (let j = 0; j < splitNest[0].length; j++) {
         for (let i = 0; i < splitNest.length; i++) {
             ansArr.push(splitNest[i][j]);
         }
     }
     return ansArr;
-};
-
-/**
- * Runtime: 88 ms, faster than 42.75% of JavaScript online submissions for Shuffle the Array.
- * Memory Usage: 38.6 MB, less than 100.00% of JavaScript online submissions for Shuffle the Array.
- */
+    /**
+     * Runtime: 88 ms, faster than 42.75% of JavaScript online submissions for Shuffle the Array.
+     * Memory Usage: 38.6 MB, less than 100.00% of JavaScript online submissions for Shuffle the Array.
+     */
+}
 console.log(shuffle([2, 5, 1, 3, 4, 7], 3));
+console.log(shuffle([1, 1, 1, 5, 6, 7], 3));
+
+/**tags for later look up
+ * multipleSubmissions
+ * refactorMe
+ */
