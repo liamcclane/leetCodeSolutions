@@ -1,4 +1,4 @@
-/** Reverse String II**
+/** Reverse String II - 541
  * 
  * Given a string and an integer k, 
  * you need to reverse the first k characters 
@@ -12,89 +12,56 @@
  * Output:    "bacdfeg"
  * 
  * Example:
- * Input: s = "aabccddeffgghiij";
+ * Input: s = "aabccddeffgghiij", k = 5;
  * Output:    "ccbaaddeffiihggj";
  * 
  * Example:
- * Input: s = "aabccddeffgghiijjk";
+ * Input: s = "aabccddeffgghiijjk", k = 5;
  * Output:    "ccbaaddeffiihggjjk";
  * 
  * Example:
- * Input: s = "aaBccddEf";
+ * Input: s = "aaBccddEf" k = 5;
  * Output:    "ccBaaddEf";
  * 
  * Example:
- * Input: s = "aaBccddEffggHiijjKll";
+ * Input: s = "aaBccddEffggHiijjKll", k = 5;
  * Output:    "ccBaaddEffiiHggjjKll";
  * 
- * 
-
  * @param {string} s
  * @param {number} k
  * @return {string}
  */
 var reverseStr = function (s, k) {
-    let len = s.length;
-    // console.log(s[100]===undefined);
-    for (let i = 0; i < len; i++) {
-    }
-}
-// reverseStr("aaBccddEffggHiij");
-
-
-
-
-/**
- *  this function takes in string,s, and an integer, k, and reverses 
- * the k amount of letters in clumps of the string
- * 
- * for example 
- * reverseStrWrong("abcde",2) returns "badce"
- * and 
- * reverseStrWrong("aabccddeffg", 5) returns "ccbaaffeddg";
- * @param {string} s 
- * @param {number} k 
- * @returns {string} 
- */
-var reverseStrWrong = function (s, k) {
-    let inner = "";
-    let ans = "";
-    let times = (Math.floor(s.length / k));
-
-    if (k === 2) {
-        let arr = [...s];
-        let i = 0;
-        while (times > 0) {
-            // [arr[i],arr[i+1]] = [arr[i+1],arr[i]];
-            // console.log(arr);
-            // console.log(arr[i]);
-            // console.log(arr[i+1]);
-            ans += arr[i + 1] + arr[i];
-            // console.log(ans);
-            i += 2;
-            times--;
+    const helper = (inner) => {
+        let arr = inner.split("");
+        for (let i = 0, j = inner.length - 1;
+            i <= j; i++, j--) {
+            [arr[i], arr[j]] = [arr[j], arr[i]];
         }
-        ans += s.slice(i, s.length);
-        return ans;
+        return arr.join("");
     }
 
-    for (let i = 0; i < s.length; i++) {
-        inner += s[i];
-        if ((i + 1) % k === 0) {
-            let arr = [...inner];
-            for (let j = 0; j <= Math.floor(inner.length / 2); j++) {
-                [arr[j], arr[arr.length - 1 - j]] = [arr[arr.length - 1 - j], arr[j]];
-            }
-            for (let letter of arr) {
-                ans += letter;
-            }
-            inner = "";
-            times--;
-        }
-        if (s.length - 1 - k <= i && s.length && times <= 0) {
-            ans += inner;
+    let ans = "", ind = 0, sLen = s.length;
+    for (; ind < sLen; ind += k) {
+        if (ind + (2 * (k - 1)) < sLen) {
+            ans += helper(s.slice(ind, ind + k));
+            ind += k;
+            ans += s.slice(ind, ind + k);
+        } else if (ind + (k - 1) > sLen) {
+            ans += helper(s.slice(ind, sLen));
+            break;
+        } else {
+            ans += helper(s.slice(ind, ind + k));
+            ind += k;
+            ans += s.slice(ind, sLen);
+            break;
         }
     }
     return ans;
-};
-// console.log(reverseStr("abcde", 2));
+    /**
+     * Runtime: 88 ms, faster than 46.31% of JavaScript online submissions for Reverse String II.
+     * Memory Usage: 38.6 MB, less than 72.54% of JavaScript online submissions for Reverse String II.
+     */
+}
+console.log(reverseStr("aabccddeffgghiij", 5));
+console.log("ccbaaddeffiihggj");
