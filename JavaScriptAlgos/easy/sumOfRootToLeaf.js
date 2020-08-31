@@ -78,3 +78,6 @@ top.right.left = new TreeNode(0);
 top.right.right = new TreeNode(1);
 
 console.log(sumRootToLeaf(top));
+/**tags for later look up
+ * recursion
+ */
