@@ -1,5 +1,6 @@
-/**
- * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+/**20. Valid Parentheses
+ * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', 
+ * determine if the input string is valid.
  * 
  * An input string is valid if:
  * 
@@ -40,6 +41,12 @@ var isValid = function (s) {
     }
     if(ar.length != 0) return false;
     return true;
+    /**
+     * Runtime: 64 ms
+     * Memory Usage: 35 MB
+     * Your runtime beats 98.23 % of javascript submissions.
+     * Your memory usage beats 83.95 % of javascript submissions.
+     */
 };
 
 console.log(isValid("([)]"));

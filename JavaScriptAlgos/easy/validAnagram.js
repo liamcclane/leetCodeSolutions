@@ -82,3 +82,6 @@ const x = (s, t) => {
 console.log(x("cat", "rat"));
 console.log(x("cat", "t"));
 console.log(x("cat", "tac"));
+/**tags for later look up
+ * multipleSubmissions
+ */

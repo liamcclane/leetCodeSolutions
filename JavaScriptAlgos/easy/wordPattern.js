@@ -1,4 +1,4 @@
-/**Word Pattern**
+/**290. Word Pattern
  * 
  * Given a pattern and a string str, find if str follows the same pattern.
  * 
@@ -80,6 +80,12 @@ var wordPattern = function (pattern, str) {
     }
     // console.log(dict);
     return true;
+    /**
+     * Runtime: 60 ms
+     * Memory Usage: 33.9 MB
+     * Your runtime beats 99.39 % of javascript submissions.
+     * Your memory usage beats 77.84 % of javascript submissions
+     */
 };
 
 console.log(wordPattern("abba", "dog cat cat dog"));
@@ -95,22 +101,3 @@ console.log(wordPattern("abba", "dog dog dog dog"));
 console.log();
 
 console.log(wordPattern("aaa", "aa aa aa aa")); // should return false
-
-
-/* Example 1:
-*
-* Input: pattern = "abba", str = "dog cat cat dog"
-* Output: true
-* Example 2:
-*
-* Input:pattern = "abba", str = "dog cat cat fish"
-* Output: false
-* Example 3:
-*
-* Input: pattern = "aaaa", str = "dog cat cat dog"
-* Output: false
-* Example 4:
-*
-* Input: pattern = "abba", str = "dog dog dog dog"
-* Output: false
-*/

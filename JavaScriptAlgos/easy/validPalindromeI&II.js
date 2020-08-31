@@ -40,6 +40,10 @@ const isPalindrome = function (s) {
         }
     }
     return true;
+    /***
+     * Runtime: 68 ms, faster than 79.84% of JavaScript online submissions for Valid Palindrome.
+     * Memory Usage: 39.5 MB, less than 30.43% of JavaScript online submissions for Valid Palindrome.
+     */
 };
 console.log(isPalindrome("abc1cba"));
 
@@ -49,10 +53,6 @@ console.log(isPalindrome("abc1cba"));
 // console.log();
 // console.log(isPalindrome("0P")); // that case I was failing before the else if was in place
 
-/***
- * Runtime: 68 ms, faster than 79.84% of JavaScript online submissions for Valid Palindrome.
- * Memory Usage: 39.5 MB, less than 30.43% of JavaScript online submissions for Valid Palindrome.
- */
 /*********************************************************************/
 /**680- Valid Palindrome II
  * 
@@ -140,14 +140,13 @@ var validPalindromeTimeConstraint = function (s) {
         if (isPalindromeB(newWord)) return true;
     }
     return false;
+    /**
+     * Runtime: 88 ms, faster than 55.41% of JavaScript online submissions for Valid Palindrome II.
+     * Memory Usage: 42.8 MB, less than 75.00% of JavaScript online submissions for Valid Palindrome II.
+     */
 };
 // console.log(validP("abc"));
 // console.log();
 // console.log(validP("leqyxqopjzqdytivrzkdgmhchkgkpbdnewoubudgvykyqkcyoyeavbjplgodcocazrvhmarkrcozyuywostjdkxwghbaliccfqukgisqzqpukmaissranamsjawivxzbjqazzcaqfzsecgcfkzvvpjuinvhkjteoaqsmaedkifenmcmicgrwmmfubvpnrowszbofeyecwihgsemlwyipuzowyjapklsdbtupttabemanmgqbsatunrbhwleffelwhbrnutasbqgmnamebattputbdslkpajywozupiywlmesghiwceyefobzswornpvbufmmwrgcimcmnefikdeamsqaoetjkhvniujpvvzkfcgceszfqaczaqjbzxviwajsmanarssiamkupqzsigkuqfccilabhgwxkdjtsowyuyzocrkramhvrzacocdoglpjbvaeyoyckqykyvgdubuowendbpkgkhchmgdkzrvitydqzjpoqxyqel")); // true
 // console.log();
 // console.log(validP("aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga")) // true
-
-/**
- * Runtime: 88 ms, faster than 55.41% of JavaScript online submissions for Valid Palindrome II.
- * Memory Usage: 42.8 MB, less than 75.00% of JavaScript online submissions for Valid Palindrome II.
- */

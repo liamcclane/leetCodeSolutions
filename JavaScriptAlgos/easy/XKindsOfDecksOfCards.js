@@ -76,3 +76,6 @@ var hasGroupsSizeX = function(deck) {
     // return false;
     
 };
+/**tags for later look up
+ * unfinished
+ */
