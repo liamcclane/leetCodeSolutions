@@ -17,7 +17,8 @@ var shortestToChar = function (S, C) {
     const findChar = (arr, target, ind) => {
 
         for (let moveLeft = ind, moveRight = ind;
-            moveLeft >= 0 || moveRight < len; moveLeft--, moveRight++) {
+            moveLeft >= 0 || moveRight < len;
+            moveLeft--, moveRight++) {
             if (moveLeft >= 0 && arr[moveLeft] == target) {
                 return ind - moveLeft;
             }
@@ -25,17 +26,20 @@ var shortestToChar = function (S, C) {
                 return moveRight - ind;
             }
         }
+
+
     }
 
-    if(Objects.keys(dict) > 0) {return false;}
-    // for (let i = 0; i < len; i++) {
-    //     ans.push(findChar(arrOfChars, C, i));
-    // }
+    for (let i = 0; i < len; i++) {
+        ans.push(findChar(arrOfChars, C, i));
+    }
 
     return ans;
-
+    /**
+     * Runtime: 92 ms, faster than 49.06% of JavaScript online submissions for Shortest Distance to a Character.
+     * Memory Usage: 37.5 MB, less than 81.60% of JavaScript online submissions for Shortest Distance to a Character.
+     */
 };
-/**
- * Runtime: 92 ms, faster than 49.06% of JavaScript online submissions for Shortest Distance to a Character.
- * Memory Usage: 37.5 MB, less than 81.60% of JavaScript online submissions for Shortest Distance to a Character.
+/**tags for later look up
+ * nestedForLoops
  */
