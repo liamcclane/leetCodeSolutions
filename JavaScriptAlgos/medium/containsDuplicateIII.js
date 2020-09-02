@@ -1,4 +1,4 @@
-/**Contains Duplicate III
+/**Contains Duplicate III - 220 
  * Given an array of integers, find out whether there are two distinct indices i and j
  * in the array such that the absolute difference 
  * between nums[i] and nums[j] is at most t 
@@ -47,4 +47,7 @@ console.log(containsNearbyAlmostDuplicate([1, 5, 9, 1, 5, 9], 2, 3)); // false
 /**
  * Runtime: 232 ms, faster than 63.95% of JavaScript online submissions for Contains Duplicate III.
  * Memory Usage: 35.2 MB, less than 50.00% of JavaScript online submissions for Contains Duplicate III.
+ */
+/**tags for later look up
+ * SeptemberDailyChallenge
  */
