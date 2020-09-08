@@ -77,7 +77,51 @@ top.right = new TreeNode(1);
 top.right.left = new TreeNode(0);
 top.right.right = new TreeNode(1);
 
-console.log(sumRootToLeaf(top));
+// console.log(sumRootToLeaf(top));
+
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var sumRootToLeaf2 = function (root) {
+
+    const treeTraversal = (node) => {
+        if(!node.left && !node.right) {
+            return [node.val.toString()];
+        }
+        let arr = [];
+        const helper = (node, str = "") => {
+            str += node.val.toString();
+            if (!node.left && !node.right) {
+                return str;
+            }
+            if (node.left) {
+                let a = helper(node.left, str);
+                if(a != null) {
+                    arr.push(a);
+                }
+            }
+            if (node.right) {
+                let b = helper(node.right, str);
+                if(b != null) {
+                    arr.push(b);
+                }
+            } 
+            return null;
+        }
+        helper(node);
+        return arr;
+    }
+    let arrOfBinary = treeTraversal(root), sum = 0;
+    for(let i = 0; i < arrOfBinary.length; i++) {
+        sum += parseInt(arrOfBinary[i], 2);
+    }
+    console.log(sum);
+
+    return sum;
+};
+console.log(sumRootToLeaf2(top));
+
 /**tags for later look up
  * recursion
  */
