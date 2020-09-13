@@ -88,16 +88,109 @@ var wordPattern = function (pattern, str) {
      */
 };
 
-console.log(wordPattern("abba", "dog cat cat dog"));
-console.log();
+// console.log(wordPattern("abba", "dog cat cat dog"));
+// console.log();
 
-console.log(wordPattern("abba", "dog cat cat fish"));
-console.log();
+// console.log(wordPattern("abba", "dog cat cat fish"));
+// console.log();
 
-console.log(wordPattern("aaaa", "dog cat cat dog"));
-console.log();
+// console.log(wordPattern("aaaa", "dog cat cat dog"));
+// console.log();
 
-console.log(wordPattern("abba", "dog dog dog dog"));
-console.log();
+// console.log(wordPattern("abba", "dog dog dog dog"));
+// console.log();
 
-console.log(wordPattern("aaa", "aa aa aa aa")); // should return false
+// console.log(wordPattern("aaa", "aa aa aa aa")); // should return false
+
+/**290. Word Pattern
+ * Given a pattern and a string str, find if str follows the same pattern.
+ * 
+ * Here follow means a full match, such that there is a bijection 
+ * between a letter in pattern and a non-empty word in str.
+ * 
+ * Example 1:
+ * 
+ * Input: pattern = "abba", str = "dog cat cat dog"
+ * Output: true
+ * Example 2:
+ * 
+ * Input:pattern = "abba", str = "dog cat cat fish"
+ * Output: false
+ * Example 3:
+ * 
+ * Input: pattern = "aaaa", str = "dog cat cat dog"
+ * Output: false
+ * Example 4:
+ * 
+ * Input: pattern = "abba", str = "dog dog dog dog"
+ * Output: false
+ */
+const wordPatternlia = (pattern, str) => {
+    let arrOfWords = str.split(" ");
+    let len = pattern.length;
+    if(len != arrOfWords.length){ return false;}
+    let dictWithWordKeys = {};
+    let dictWithLetterKeys = {};
+    // dictWithLetterKeys = {
+    //     "a" : "cat",
+    //     "b" : "dog"
+    // }
+
+    // dictWithWordKeys = {
+    //     "cat":"a",
+    //     "dog":"b"
+    // }
+
+    // is what we want it to look like ya?
+
+    for (let i = 0; i < len; i++) {
+        let word = arrOfWords[i],
+            letter = pattern[i],
+            oldWord, oldLetter;
+
+        if (letter in dictWithLetterKeys) {
+            oldWord = dictWithLetterKeys[letter];
+        } else {
+            dictWithLetterKeys[letter] = word;
+        }
+        // console.log(oldLetter)
+        // console.log(oldWord)
+        // console.log(word)
+        // console.log(letter)
+        // console.log();
+        if (word in dictWithWordKeys) {
+            oldLetter = dictWithWordKeys[word];
+        } else {
+            dictWithWordKeys[word] = letter;
+        }
+
+        if (oldWord && oldWord != word) {
+            return false;
+        }
+        if (oldLetter && oldLetter != letter) {
+            return false;
+        }
+
+
+    }
+    // I think there is a problem in this code with the idea that
+    // "abba" "cat cat cat cat"
+    // gets passed, that is why I had an unique words array in the old function
+    // if we make two dict, that should solve the problem, I think
+    return true;
+    /**
+     * Runtime: 84 ms, faster than 32.56% of JavaScript online submissions for Word Pattern.
+     * Memory Usage: 36.4 MB, less than 72.09% of JavaScript online submissions for Word Pattern.
+     */
+}
+console.log(wordPatternlia("abba", "cat dog dog cat")); // true 
+console.log(wordPatternlia("abc", "c a b")); // true
+console.log(wordPatternlia("abba", "cat cat cat cat")); // false
+
+
+/**tags for later look up
+ * SeptemberChallenge
+ * multipuleSubmissions
+ * bijection
+ * 1-to-1
+ */
