@@ -84,7 +84,6 @@ top.right.right = new TreeNode(1);
  * @return {number}
  */
 var sumRootToLeaf2 = function (root) {
-
     const treeTraversal = (node) => {
         if(!node.left && !node.right) {
             return [node.val.toString()];
@@ -116,12 +115,16 @@ var sumRootToLeaf2 = function (root) {
     for(let i = 0; i < arrOfBinary.length; i++) {
         sum += parseInt(arrOfBinary[i], 2);
     }
-    console.log(sum);
-
     return sum;
+    /**
+     * Runtime: 92 ms, faster than 38.42% of JavaScript online submissions for Sum of Root To Leaf Binary Numbers.
+     * Memory Usage: 38.9 MB, less than 22.60% of JavaScript online submissions for Sum of Root To Leaf Binary Numbers.
+     */
 };
 console.log(sumRootToLeaf2(top));
 
 /**tags for later look up
  * recursion
+ * multipleSubmissions
+ * SeptemberChallenge
  */
