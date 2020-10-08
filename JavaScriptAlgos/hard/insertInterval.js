@@ -125,12 +125,12 @@ var insert = function (intervals, newInterval) {
  * @returns {number[][]}
  */
 const insertAgain = (intervals, newInterval) => {
-    
+
     const areAllValuesUnique = (arr) => {
         for (let i = 1; i < arr.len; i++) {
-            if (arr[i - 1] == arr[i]) { 
+            if (arr[i - 1] == arr[i]) {
                 console.log("FALSE");
-                return false; 
+                return false;
             }
         }
         return true;
