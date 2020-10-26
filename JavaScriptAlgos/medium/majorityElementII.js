@@ -19,21 +19,21 @@
 const majorElement = (nums) => {
     // edge cases
 
-    if(nums.length <= 1) { return nums }
+    if (nums.length <= 1) { return nums }
 
-    if(nums.length === 2) {
+    if (nums.length === 2) {
         // what do we want to return if 
         // [11,12] -> [11,12] 
 
-        if(nums[0] === nums[1]){
+        if (nums[0] === nums[1]) {
             nums.pop();
         }
         return nums;
     }
-    
-    if(nums.length === 3) {
+
+    if (nums.length === 3) {
         let dictLen3 = {};
-        for(let val of nums) {
+        for (let val of nums) {
             if (val in dictLen3) {
                 return [val];
             } else {
@@ -47,14 +47,14 @@ const majorElement = (nums) => {
     // [11,11,13] -> [11]
     // 
 
-    let magicNum = Math.ceil(nums.length/3);
+    let magicNum = Math.ceil(nums.length / 3);
     let dict = {};
     let ans = [];
-    
-    for(let val of nums) {
-        if(val in dict){
+
+    for (let val of nums) {
+        if (val in dict) {
             dict[val]++;
-            if(dict[val]>= magicNum && !(ans.includes(val))) {
+            if (dict[val] >= magicNum && !(ans.includes(val))) {
                 ans.push(val);
             }
         } else {
@@ -62,6 +62,9 @@ const majorElement = (nums) => {
         }
     }
     return ans;
+    // Accepted!!
+    // Runtime: 80 ms, faster than 26.53% of JavaScript online submissions for Majority Element II.
+    // Memory Usage: 40.5 MB, less than 5.24% of JavaScript online submissions for Majority Element II.
 };
 
 
@@ -93,7 +96,3 @@ const majorElement = (nums) => {
 // console.log(majorElement([5,5,5,3]));
 
 
-
-// Accepted!!
-// Runtime: 80 ms, faster than 26.53% of JavaScript online submissions for Majority Element II.
-// Memory Usage: 40.5 MB, less than 5.24% of JavaScript online submissions for Majority Element II.
