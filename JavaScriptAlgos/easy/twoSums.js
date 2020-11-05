@@ -25,6 +25,22 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
+    let dict = {};
+    for (let i = 0; i < nums.length; i++) {
+        let val = nums[i], lookingFor = target - val;
+        if(lookingFor in dict) {
+            return [dict[lookingFor], i];
+        } else {
+            dict[val] = i;
+        }
+    }
+    /**
+     * Runtime: 84 ms, faster than 66.48% of JavaScript online submissions for Two Sum.
+     * Memory Usage: 41 MB, less than 5.71% of JavaScript online submissions for Two Sum.
+     */
+};
+
+const NSquared = () => {
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
             if (nums[i] + nums[j] == target) {
@@ -38,7 +54,10 @@ var twoSum = function (nums, target) {
      * Your runtime beats 52.66 % of javascript submissions.
      * Your memory usage beats 95.81 % of javascript submissions.
      */
-};
+}
+
+
+
 /**tags for later look up
  * refactorMe
  * nestedForLoops
