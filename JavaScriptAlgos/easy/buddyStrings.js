@@ -9,29 +9,25 @@
  * swapping at indices 0 and 2 in "abcd" results in "cbad".
  * 
  * Example 1:
- * 
  * Input: A = "ab", B = "ba"
  * Output: true
  * Explanation: You can swap A[0] = 'a' and A[1] = 'b' to get "ba", which is equal to B.
- * Example 2:
  * 
+ * Example 2:
  * Input: A = "ab", B = "ab"
  * Output: false
  * Explanation: The only letters you can swap are A[0] = 'a' and A[1] = 'b', which results in "ba" != B.
- * Example 3:
  * 
+ * Example 3:
  * Input: A = "aa", B = "aa"
  * Output: true
  * Explanation: You can swap A[0] = 'a' and A[1] = 'a' to get "aa", which is equal to B.
+ * 
  * Example 4:
- * 
  * Input: A = "aaaaaaabc", B = "aaaaaaacb"
- * "------**" 
- * letter = b
- * 
  * Output: true
- * Example 5:
  * 
+ * Example 5:
  * Input: A = "", B = "aa"
  * Output: false
  * @param {string} A
@@ -39,7 +35,6 @@
  * @return {boolean}
  */
 var buddyStrings = function (A, B) {
-
     if (A.length != B.length) { return false; }
     let count = 0, dict = {
         strA1: "",
@@ -72,14 +67,12 @@ var buddyStrings = function (A, B) {
         }
         return false;
     }
-
     return dict['strA1'] == dict['strB2'] && dict['strA2'] == dict['strB1'];
     /**
      * Runtime: 88 ms, faster than 51.33% of JavaScript online submissions for Buddy Strings.
      * Memory Usage: 41.5 MB, less than 7.08% of JavaScript online submissions for Buddy Strings.
      */
 };
-
 // console.log(buddyStrings("aa","aa") ," <= true");
 // console.log(buddyStrings("liamcclane", "mialcclane"), " <= true");
 // console.log(buddyStrings("yellow", "yellow"), " <= true");
@@ -87,8 +80,3 @@ var buddyStrings = function (A, B) {
 // console.log(buddyStrings("mcclanelia", "mialcclane"), " <= false");
 // console.log(buddyStrings("ab", "bc"), " <= false");
 // console.log(buddyStrings("ab","ab") , " <= false");
-
-
-
-
-

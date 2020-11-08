@@ -39,7 +39,8 @@ const TreeNode = require('./../dataStructures/TreeNode');
  * Output: "1(2()(4))(3)"
  * 
  * Explanation: Almost the same as the first example, 
- * except we can't omit the first parenthesis pair to break the one-to-one mapping relationship between the input and the output.
+ * except we can't omit the first parenthesis pair to break the 
+ * one-to-one mapping relationship between the input and the output.
  * @param {TreeNode} t
  * @return {string}
  */
