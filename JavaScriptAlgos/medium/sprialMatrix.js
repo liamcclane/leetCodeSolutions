@@ -45,7 +45,10 @@ var spiralOrder = function (matrix) {
         move();
     }
     return ans;
-
+    /**
+     * Runtime: 76 ms, faster than 70.13% of JavaScript online submissions for Spiral Matrix.
+     * Memory Usage: 38.5 MB, less than 38.72% of JavaScript online submissions for Spiral Matrix.
+     */
 };
 /**
  * this function goes in a circle not taking into account 
