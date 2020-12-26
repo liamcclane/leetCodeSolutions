@@ -1,4 +1,4 @@
-/**
+/**443. String Compression
  * Given an array of characters, compress it in-place.
  * 
  * The length after compression must always be smaller than or equal to the original array.
@@ -51,32 +51,35 @@
  * @return {number}
  */
 var compress = function (chars) {
-    let dict = {};
-    let ind = 0;
-    for (let i = 0; i < chars.length; i++) {
-        if (chars[i] in dict) {
-            dict[chars[i]]++;
-        } else {
-            dict[chars[i]] = 1;
-        }
-    }
-    for (key in dict) {
-        if (dict[key] === 1) {
-            ind++
-        } else {
-            chars[ind] = key;
-            let n = dict[key].toString();
-            for (let i = 0; i < n.length; i++) {
-                chars[ind + i + 1] = n[i];
-            }
-            ind += 2;
-        }
-    }
-    console.log(chars);
-    return ind;
+    // let dict = {};
+    // let ind = 0;
+    // for (let i = 0; i < chars.length; i++) {
+    //     if (chars[i] in dict) {
+    //         dict[chars[i]]++;
+    //     } else {
+    //         dict[chars[i]] = 1;
+    //     }
+    // }
+    // for (key in dict) {
+    //     if (dict[key] === 1) {
+    //         ind++
+    //     } else {
+    //         chars[ind] = key;
+    //         let n = dict[key].toString();
+    //         for (let i = 0; i < n.length; i++) {
+    //             chars[ind + i + 1] = n[i];
+    //         }
+    //         ind += 2;
+    //     }
+    // }
+    // console.log(chars);
+    // return ind;
 };
 
 
 
 let a = ["a", "b", "b", "b", "b", "b", "b", "b", "e", "e", "b", "b", "b", "b", "b"];
 console.log(compress(a));
+/**tags for later look up
+ * unfinished
+ */

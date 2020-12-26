@@ -173,10 +173,6 @@ const wordPatternlia = (pattern, str) => {
 
 
     }
-    // I think there is a problem in this code with the idea that
-    // "abba" "cat cat cat cat"
-    // gets passed, that is why I had an unique words array in the old function
-    // if we make two dict, that should solve the problem, I think
     return true;
     /**
      * Runtime: 84 ms, faster than 32.56% of JavaScript online submissions for Word Pattern.
@@ -190,7 +186,7 @@ console.log(wordPatternlia("abba", "cat cat cat cat")); // false
 
 /**tags for later look up
  * SeptemberChallenge
- * multipuleSubmissions
+ * multipleSubmissions
  * bijection
  * 1-to-1
  */
