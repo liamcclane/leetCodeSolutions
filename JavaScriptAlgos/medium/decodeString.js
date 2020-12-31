@@ -17,8 +17,7 @@
  */
 var decodeString = function (s) {
 
-    let answer = "", len = s.length,
-        repNum = "", inner = "";
+    let answer = "", len = s.length;
     /**Helper
      * this method takes a number as a starting index to step though
      * the global parameter s and return the inner string of 
@@ -68,7 +67,7 @@ var decodeString = function (s) {
     }
     return answer;
     /**
-     * Runtime: 80 ms, faster than 39.57% of JavaScript online submissions for Decode String.
+     * Runtime: 76 ms, faster than 68.45% of JavaScript online submissions for Decode String.
      * Memory Usage: 38.5 MB, less than 48.16% of JavaScript online submissions for Decode String.
      */
 
